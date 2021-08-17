@@ -1,0 +1,114 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title> My Page </title>
+<link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+<!-- <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\jQuery\jquery.js"> -->
+<style type="text/css">
+    .div_show{
+        display: none;
+        transition: visibility 3s;
+    }
+    .div_prop{
+        resize: both;
+        overflow: auto;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+</style>
+
+</head>
+<body>
+        <center>
+    <h1 class="co alert alert-primary border border-info"> Employee Details </h1>
+   <!-- w-25 p-3" -->
+    <hr>
+
+
+
+    <div style="width: 500px;" >
+        <table class="table border border-primary">
+          <thead>
+            <tr class="alert alert-primary border">
+              <th scope="col">S.No</th>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Skills</th>
+              <th scope="col">State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>C,C++,Java,Web Developing</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Artificial Intelligence</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>Data Science</td>
+              <td>Active</td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+    <br> 
+    <div style="width: 400px;" class="div_prop alert alert-primary border border-success rounded">
+       <!-- New_Emp.html -->
+        <form action="javascript:get_data()" method="post">
+            <table>
+                <tr>
+                    <td> <label> Name: </label></td>
+                    <td> <input type="text" name="nam" id="nam" placeholder="Name" required></td>
+                </tr>
+                <tr>
+                    <td> <label> Skills: </label></td>
+                    <td> <input type="text" name="skill" id="skill" placeholder="Skills" required></td>
+                </tr>
+                
+                <tr>
+                    <td> <label> State: </label></td>
+                    <td> <input type="text" name="state" id="state" placeholder="State" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"> <button type="submit"> Add Employee Detail </button> </td>
+                 
+                </tr>
+            </table>
+
+        </form>
+        
+      
+    </div>
+       
+    
+</center>
+</body>
+    <script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/js_fun.js"></script>
+
+    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+ <!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ -->
+    <script type="text/javascript">
+        function fun_jq(){
+          
+            var nam=document.getElementById("nam").value;
+            var skill=document.getElementById("skill").value;
+            var state=document.getElementById("state").value;
+
+             // document.getElementById("p_na1").innerHTML   ="Name      :  "+person.na1;
+             // document.getElementById("p_sk1").innerHTML ="Skills     : "+person.sk1;
+             // document.getElementById("p_st1").innerHTML ="State : "+person.st1;
+        }
+    </script>
+</html>  

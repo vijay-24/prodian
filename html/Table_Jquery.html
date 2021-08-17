@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+    <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+
+<div class="alert alert-success text-center">
+    <strong style="font-size:2vw;">Employee Details </strong> 
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light alert alert-success">
+    <a class="navbar-brand" href="#">Navbar</a>
+ </nav>
+ <br>
+
+<center>
+
+  <table class="table table-hover border border-primary mt-2" style="width: 50%;position: sticky;">
+    <thead class="alert alert-success">
+     
+      <td> Employee Name</td>
+      <td> Skills </td>
+      <td> State</td>
+    </thead>
+    <tbody id="tbody">
+      <tr>
+        
+        <td> Ram</td>
+        <td> Java </td>
+        <td> Active</td>
+      </tr> 
+      
+    </tbody>
+  </table>
+  <br>
+  
+</center>
+
+<br><center>
+<div class="border border-primary px-2 py-2" style="width:500px;">
+  <div class="col-sm-10 px-2 py-2 alert alert-success">
+    <span class="">
+      Enter Employee Details
+      </span>
+    </div>
+  <center> 
+  <div class="row px-2">
+   <div class="col-sm-5 px-2 py-2">
+        <span class="input-group-text form-control" id="basic-addon1" for="emp_name">Employee Name</span>
+      </div>
+    <div class="col-sm-5 px-2 py-2">
+        <input type="text" class="form-control" placeholder="Employee Name" id="e_name">
+    </div>
+  </div>
+ </center> 
+  <div class="row px-2">
+   <div class="col-sm-5 px-2 py-2">
+        <span class="input-group-text" id="basic-addon1" for="emp_name">Skills</span>
+      </div>
+      <div class="col-sm-5 px-2 py-2">
+        <input type="text" class="form-control" placeholder="Skills" id="e_skill">
+      </div>
+  </div>
+
+  <div class="row px-2">
+   <div class="col-sm-5 px-2 py-2">
+        <span class="input-group-text" id="basic-addon1" for="emp_name">State</span>
+      </div>
+      <div class="col-sm-5 px-2 py-2">
+        <input type="text" class="form-control" placeholder="State" id="e_state">
+      </div>
+  </div>
+</div>  
+</center>
+<br>
+<center><input type="button" onclick="get_data()" value="Add Detail"></center>
+<br>
+<!-- <iframe src="F:/movies/video songs/Jai_song.mp4" title="video"></iframe> -->
+</body>
+<script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/JS_Add_Table.js"></script>
+
+</html>

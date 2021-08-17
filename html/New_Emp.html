@@ -1,0 +1,50 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title> New Employee Added Details </title>
+<link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+     <center>
+      <h1 class="co alert alert-primary border border-info">New Employee Added Details </h1>
+
+        <div style="width: 400px;" id="div_show" class="div_prop alert alert-primary border border-success rounded">
+            <p> This Employee details directly get from the url by Javascript </p>
+            <hr>
+            <p id="p_nam">Name:</p>
+            <p id="p_skill">Skills:</p>
+            <p id="p_state">State:</p>
+        </div>
+
+        <br> <br>
+
+        
+    </center>
+        <br>
+        
+        <script type="text/javascript">
+           
+            // var new_js=JSON.stringify(emp_det);
+            // console.log(new_js);
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var nam = url.searchParams.get("nam");
+            var skill = url.searchParams.get("skill");
+            var state = url.searchParams.get("state");
+            console.log(url_string);
+            document.getElementById("p_nam").innerHTML   ="Name      :  "+nam;
+            document.getElementById("p_skill").innerHTML ="Skills     : "+skill;
+            document.getElementById("p_state").innerHTML ="State : "+state;
+           
+         
+     </script>
+   
+</body>
+     <script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/js_fun.js"></script>
+
+    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+
+</html>

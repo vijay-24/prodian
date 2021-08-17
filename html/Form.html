@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+    <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+ <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+<div class="alert alert-success text-center">
+    <strong style="font-size:2vw;">Employee Form </strong> 
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light alert alert-success">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+ 
+ <!-- ---------------------------------------------------------------------------- -->
+ <div class="container border border-primary py-2 w-50 p-3 d-flex align-items-center" style="width:400px;">
+  <form>
+    <div class="row px-2 py-1 d-flex align-items-center">
+      <div class="col-sm-10 px-5 py-1 alert alert-success d-flex justify-content-center d-flex align-items-center">Employee Registration Form</div>
+      <div class="col-sm-5 px-1 py-1" for="tb_name">
+        <span class="input-group-text" for="tb_name">First Name</span>
+      </div>
+      <div class="col-sm-5 px-1 py-1">
+        <input type="text" class="form-control" placeholder="Username" id="tb_name">
+      </div>
+   
+      <div class="col-sm-5 px-1 py-1">
+        <span class="input-group-text" for="tb_lname">Last Name</span>
+      </div>
+      <div class="col-sm-5 px-1 py-1">
+        <input type="text" class="form-control" placeholder="LastName" id="tb_lname">
+      </div>
+      
+      <div class="col-sm-5 px-1 py-1">
+        <span class="input-group-text" for="tb_fname">Father Name</span>
+      </div>
+      <div class="col-sm-5 px-1 py-1">
+        <input type="text" class="form-control" placeholder="FatherName" id="tb_fname">
+      </div>
+      <div class="col-sm-5 px-1 py-1">
+        <span class="input-group-text" >Date of Birth</span>
+      </div>
+      <div class="col-sm-5 px-1 py-1">
+        <input type="date" class="form-control" placeholder="FatherName" id="date">
+      </div>
+
+       <div class="col-sm-5 px-1 py-1">
+          <span class="input-group-text" id="basic-addon1" for="tb_email">Email</span>
+       </div>
+        <div class="col-sm-5 px-1 py-1">
+          <input type="email" class="form-control" placeholder="name@domain.com" id="tb_email">
+       </div>
+
+        <div class="col-sm-5 px-1 py-1">
+          <span class="input-group-text" id="basic-addon1">Gender</span>
+        </div>
+        <div class="col-sm-5 px-2 py-1 navbar navbar-expand-lg">
+           <div class="form-check">
+              <input class="form-check-input" type="radio" id="rd_gender1" value="Male" name="rd_gender">
+                <label class="form-check-label" for="rd_male">
+                  Male
+                </label>
+            </div>
+            <div class="form-check px-5">
+              <input class="form-check-input" type="radio" id="rd_gender" value="Female" name="rd_gender">
+                <label class="form-check-label" for="rd_female">
+                  Female
+                </label>
+            </div>
+             <div class="form-check px-4">
+              <input class="form-check-input" type="radio" id="rd_gender" value="Other" name="rd_gender">
+                <label class="form-check-label" for="rd_radio">
+                  Other
+                </label>
+            </div>
+          </div>
+        <div class="col-sm-5 px-1 py-1">
+          <span class="input-group-text" for="tb_ph">Phone Number</span>
+        </div>
+        <div class="col-sm-5 px-1 py-1">
+          <input type="number" id="tb_ph" class="form-control" placeholder="Phone No">
+        </div>
+
+
+         <div class="col-sm-5 px-1 py-1">
+          <span class="input-group-text" id="basic-addon1">Skills</span>
+        </div> 
+        <div class="col-sm-2 px-1 py-1">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="ch_java" value="Java">
+            <label class="custom-control-label" for="ch_java">Java</label>
+          </div>
+        </div>
+        <div class="col-sm-2 px-1 py-1">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="ch_html" value="HTML">
+            <label class="custom-control-label" for="ch_html">HTML</label>
+         </div>
+        </div>
+        <div class="col-sm-2 px-1 py-1">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="ch_python" value="Python">
+            <label class="custom-control-label" for="Python">Python</label>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-sm-5 px-1 py-1">
+          <input type="button" class="form-control" value="Submit" onclick="get_data()">
+        </div>
+        <div class="col-sm-5 px-1 py-1">
+          <input type="reset" class="form-control" value="Reset">
+        </div>
+
+
+    </div>
+  </form>
+</div>
+
+<br><br>
+
+  <center>
+    <div class="alert alert-success float-container" style="position: relative">
+      <p style="font-size:30px;font-weight: bold;margin: 0;">Prodian InfoTech</p>
+      <div style="width: 500px; text-align: center;position: relative" class="alert alert-success float-child">
+            <p style="font-size:20px;font-weight: bold;margin: 0;">Office Address:</p>
+            <p style="font-size:15px;margin: 0;">71/73, 1st Floor, 1st Main Road,</p>
+            <p style="font-size:15px;margin: 0;">CIT Nagar West, CIT Nagar, Nandanam,</p>
+            <p style="font-size:15px;margin: 0;"> Chennai, Tamil Nadu-600035,</p>
+            <p style="font-size:15px;margin: 0;">India.</p>
+      </div>
+        <div style="width: 200px;text-align: center; float: right; position: relative;left:10px" class="alert alert-success float-child">
+            <p style="font-size:20px;margin: 0;font-weight: bold;">Reach Us On: </p>
+            <p style="font-size:15px;margin: 0;">Email : info@prodian.co.in</p>
+            <p style="font-size:15px;margin: 0;">Phone : 044 4213 5380.</p>
+        </div>
+    
+  </div>
+</center>
+</body>
+
+<script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/Form_query.js"></script>
+
+</html>
