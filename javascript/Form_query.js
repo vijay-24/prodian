@@ -11,20 +11,41 @@ function get_data(){
    var email=$('#tb_email').val();
    var gender=$('input[name="rd_gender"]:checked').val();
     var phone=$('#tb_ph').val();
-   var skill=1;
+   var skill="";
    // var state=$('#e_state').val();
    //  var nam=$('#e_name').val();
    // var skill=$('#e_skill').val();
    // var state=$('#e_state').val();
    
-   console.log(date);
+    console.log(date);
     console.log(email);
-     console.log(gender);
-      console.log(phone);
-       console.log(skill);
+    console.log(gender);
+    console.log(phone);
+    console.log(skill);
 
-       if(skill==1)
-        console.log("some");
+
+      var selectedLanguage = new Array();
+        $('input[name="ch_skill"]:checked').each(function() {
+        selectedLanguage.push(this.value);
+        });
+        console.log(selectedLanguage);
+        for(var i=0;i<selectedLanguage.length;i++)
+        {
+            console.log(selectedLanguage[i]);
+            skill=skill+" "+selectedLanguage[i];
+        }
+   
+        console.log(skill);
+
+        document.getElementById("p_name").innerHTML="First Name :" +name;
+        document.getElementById("p_lname").innerHTML="Lase Name: "+lname;
+        document.getElementById("p_fname").innerHTML="Father Name :"+fname;
+        document.getElementById("p_dob").innerHTML="Date Of Birth :"+date;
+        document.getElementById("p_email").innerHTML="Email :"+email;
+        document.getElementById("p_ph").innerHTML="Phone No. :"+phone;
+        document.getElementById("p_gender").innerHTML="Gender :"+gender;
+        document.getElementById("p_skill").innerHTML="Skills :"+skill;
+
 
 
 	// var nam=document.getElementById("nam").value;
