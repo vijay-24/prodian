@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
-    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+   
     <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\css\jquery.dataTables.css">
+
+  <link rel="stylesheet" type="text/css" href="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\css\jquery.dataTables.min.css">
+
+ <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+<script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\js\jquery.dataTables.js"></script>
+<script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\js\jquery.dataTables.min.js"></script>
+
+
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
-<body>
+<body onload="add_auto()">
 
 <div class="alert alert-success text-center">
     <strong style="font-size:2vw;">Employee Details </strong> 
@@ -26,8 +35,8 @@
  <br>
 
 <center>
-
-  <table class="table table-hover border border-primary mt-2" style="width: 50%;position: sticky;">
+<div style="width: 700px" class="alert border-primary">
+  <table class="table table-hover border border-primary mt-2" style="position: sticky;" id="table" >
     <thead class="alert alert-success">
      
       <td> Employee Name</td>
@@ -35,7 +44,7 @@
       <td> State</td>
     </thead>
     <tbody id="tbody">
-      <tr>
+      <tr onclick="myFunction(this)">
         
         <td> Ram</td>
         <td> Java </td>
@@ -44,51 +53,81 @@
       
     </tbody>
   </table>
+</div>
   <br>
   
 </center>
 
 <br><center>
 <div class="border border-primary px-2 py-2" style="width:500px;">
-  <div class="col-sm-10 px-2 py-2 alert alert-success">
+  <div class="col-sm-12 px-2 py-2 alert alert-success">
     <span class="">
       Enter Employee Details
       </span>
     </div>
   <center> 
   <div class="row px-2">
-   <div class="col-sm-5 px-2 py-2">
+   <div class="col-sm-6 px-2 py-2">
         <span class="input-group-text form-control" id="basic-addon1" for="emp_name">Employee Name</span>
       </div>
-    <div class="col-sm-5 px-2 py-2">
+    <div class="col-sm-6 px-2 py-2">
         <input type="text" class="form-control" placeholder="Employee Name" id="e_name">
     </div>
   </div>
  </center> 
   <div class="row px-2">
-   <div class="col-sm-5 px-2 py-2">
+   <div class="col-sm-6 px-2 py-2">
         <span class="input-group-text" id="basic-addon1" for="emp_name">Skills</span>
       </div>
-      <div class="col-sm-5 px-2 py-2">
+      <div class="col-sm-6 px-2 py-2">
         <input type="text" class="form-control" placeholder="Skills" id="e_skill">
       </div>
   </div>
 
   <div class="row px-2">
-   <div class="col-sm-5 px-2 py-2">
+   <div class="col-sm-6 px-2 py-2">
         <span class="input-group-text" id="basic-addon1" for="emp_name">State</span>
       </div>
-      <div class="col-sm-5 px-2 py-2">
+      <div class="col-sm-6 px-2 py-2">
         <input type="text" class="form-control" placeholder="State" id="e_state">
       </div>
   </div>
 </div>  
 </center>
 <br>
-<center><input type="button" onclick="get_data()" value="Add Detail"></center>
+<center><input type="button" onclick="get_data()" value="Add Detail" class="btn btn-success"></center>
+
+
+
+
 <br>
 <!-- <iframe src="F:/movies/video songs/Jai_song.mp4" title="video"></iframe> -->
 </body>
+
+<script>
+// function myFunction(x) {
+    // alert("Row index is: " + x.rowIndex);
+    var table=document.getElementById("table"),rIndex;
+    // alert(table.rows[1]);
+    // rIndex=this.rowIndex;
+    // console.log(this.cell[0].innerHTML);
+    for(var i=0;i<table.rows.length;i++)
+    {
+      table.rows[i].onclick=function(){
+        rIndex=this.rowIndex;
+        alert(this.cell[0].innerHTML);
+      };
+    }
+
+// }
+</script>
+
+<script>
+  $(function(){
+    $("#table").dataTable();
+  })
+  </script>
+
 <script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/JS_Add_Table.js"></script>
 
 </html>
