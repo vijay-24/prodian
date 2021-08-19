@@ -1,4 +1,22 @@
 
+var app=angular.module("myapp",[]);
+app.directive("mytitle", function() {  
+    return {  
+        template : "Employee Form "  
+    };  
+}); 
+
+app.controller('myctrl', function($scope) {  
+    $scope.firstName = "Employee Registration ";  
+    $scope.lastName = "Form";  
+});  
+
+
+
+
+
+
+
 
 function get_data(){
 	// console.log(document.getElementById("nam").value);
