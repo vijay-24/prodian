@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 <head>
   <title>Employee Registration Form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css"> -->
+    <!-- Icons Link -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-
+<link rel="icon" href="D:\prodian_workspace\Traning\Icons\pic1.png" type="image/icon type">
   <script type="text/javascript" src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
     <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
   <script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\js\bootstrap.min.js"></script> 
 
-
-
+    <script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\angular-1.8.2\angular.min.js"></script>
 
   
 
@@ -26,8 +28,11 @@
  -->
 </head>
 <body>
+  <h1></h1>
 <div class="alert alert-success text-center">
-    <strong style="font-size:2vw;">Employee Form </strong> 
+  <i class="material-icons" style="font-size:36px;left:10px">public</i>
+   <strong style="font-size:2vw;" mytitle></strong> 
+   <i class="material-icons" style="font-size:36px">computer</i>
   </div>
 
 
@@ -50,11 +55,13 @@
   </div>
 </nav>
  <!-- needs-validation -->
+
  <!-- ---------------------------------------------------------------------------- -->
  <div class="container border border-primary py-2 p-3 d-flex align-items-center" style="width:500px;">
   <form action="javascript:get_data()" class="was-validated" novalidate>
     <div class="row px-2 py-1 d-flex align-items-center">
-      <div class="col-sm-12 px-4 py-1 alert alert-success d-flex justify-content-center d-flex align-items-center">Employee Registration Form</div>
+      <div class="col-sm-12 px-4 py-1 alert alert-success d-flex justify-content-center d-flex align-items-center" 
+          ng-controller="myctrl"> {{firstName + " " + lastName}}</div>
       <div class="col-sm-6 px-1 py-1" for="tb_name">
         <span class="input-group-text" for="tb_name">First Name</span>
       </div>
@@ -182,6 +189,7 @@
     <div class="alert alert-success float-container" style="position: relative">
       <p style="font-size:30px;font-weight: bold;margin: 0;">Prodian InfoTech</p>
       <div style="width: 500px; text-align: center;position: relative" class="alert alert-success float-child">
+        <i class="material-icons" style="font-size:36px">home</i>
             <p style="font-size:20px;font-weight: bold;margin: 0;">Office Address:</p>
             <p style="font-size:15px;margin: 0;">71/73, 1st Floor, 1st Main Road,</p>
             <p style="font-size:15px;margin: 0;">CIT Nagar West, CIT Nagar, Nandanam,</p>
@@ -189,6 +197,7 @@
             <p style="font-size:15px;margin: 0;">India.</p>
       </div>
         <div style="width: 300px;text-align: center; float: right; position: absolute;left:80%;top: 10px;right: 10px;" class="alert alert-success float-child">
+            <i class="material-icons" style="font-size:26px">contacts</i>
             <p style="font-size:20px;margin: 0;font-weight: bold;">Reach Us On: </p>
             <p style="font-size:15px;margin: 0;">Email : info@prodian.co.in</p>
             <p style="font-size:15px;margin: 0;">Phone : 044 4213 5380.</p>
@@ -230,6 +239,9 @@
 </div>
 
 <!-- ------------------===models end------------------------ -->
+<br>
+
+<i class="material-icons" style="font-size:36px">add_a_photo</i>
 
 
 
