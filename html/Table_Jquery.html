@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <title>Employee Registration Form</title>
   <meta charset="utf-8">
@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
-   
+    <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
     <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\css\jquery.dataTables.css">
 
   <link rel="stylesheet" type="text/css" href="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\css\jquery.dataTables.min.css">
 
- <script src="D:/prodian_workspace/Traning/plugins/jQuery/jquery.js"></script>
+
 <script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\js\jquery.dataTables.js"></script>
 <script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\DataTables\DataTables-1.10.25\js\jquery.dataTables.min.js"></script>
 
 
+    <script type="text/javascript" src="D:\prodian_workspace\Traning\plugins\angular-1.8.2\angular.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </head>
-<body onload="add_auto()">
+<body onload="add_auto()" ng-controller="myController">
 
 <div class="alert alert-success text-center">
     <strong style="font-size:2vw;">Employee Details </strong> 
@@ -44,11 +45,11 @@
       <td> State</td>
     </thead>
     <tbody id="tbody">
-      <tr onclick="myFunction(this)">
+      <tr onclick="myFunction(this)" ng-repeat="emp in emp_detail">
         
-        <td> Ram</td>
-        <td> Java </td>
-        <td> Active</td>
+        <td > {{emp.name}}</td>
+        <td > {{emp.skill}} </td>
+        <td > {{emp.state}}</td>
       </tr> 
       
     </tbody>
@@ -71,7 +72,7 @@
         <span class="input-group-text form-control" id="basic-addon1" for="emp_name">Employee Name</span>
       </div>
     <div class="col-sm-6 px-2 py-2">
-        <input type="text" class="form-control" placeholder="Employee Name" id="e_name">
+        <input type="text" class="form-control" placeholder="Employee Name" id="e_name" ng-model="emp_name">
     </div>
   </div>
  </center> 
@@ -80,7 +81,7 @@
         <span class="input-group-text" id="basic-addon1" for="emp_name">Skills</span>
       </div>
       <div class="col-sm-6 px-2 py-2">
-        <input type="text" class="form-control" placeholder="Skills" id="e_skill">
+        <input type="text" class="form-control" placeholder="Skills" id="e_skill" ng-model="emp_skill">
       </div>
   </div>
 
@@ -89,13 +90,15 @@
         <span class="input-group-text" id="basic-addon1" for="emp_name">State</span>
       </div>
       <div class="col-sm-6 px-2 py-2">
-        <input type="text" class="form-control" placeholder="State" id="e_state">
+        <input type="text" class="form-control" placeholder="State" id="e_state" ng-model="emp_state">
       </div>
   </div>
 </div>  
 </center>
 <br>
-<center><input type="button" onclick="get_data()" value="Add Detail" class="btn btn-success"></center>
+<center><input type="button" ng-click="addRow()" value="Add Detail" class="btn btn-success"></center>
+<br>
+<!-- ------------------------------------------------------------------ -->
 
 
 
@@ -105,24 +108,70 @@
 </body>
 
 <script>
-// function myFunction(x) {
-    // alert("Row index is: " + x.rowIndex);
+function myFunction(x) {
+    alert("Row index is: " + x.rowIndex);
     var table=document.getElementById("table"),rIndex;
     // alert(table.rows[1]);
     // rIndex=this.rowIndex;
     // console.log(this.cell[0].innerHTML);
-    for(var i=0;i<table.rows.length;i++)
-    {
-      table.rows[i].onclick=function(){
-        rIndex=this.rowIndex;
-        alert(this.cell[0].innerHTML);
-      };
-    }
+    // for(var i=0;i<table.rows.length;i++)
+    // {
+    //   table.rows[i].onclick=function(){
+    //     rIndex=this.rowIndex;
+    //     alert(this.cell[0].innerHTML);
+    //   };
+    // }
 
-// }
+}
+</script>
+
+<script type="text/javascript">
+  
+  var app = angular.module('myApp', []);
+    app.controller('myController', function ($scope) {
+
+        // JSON ARRAY TO POPULATE TABLE.
+        $scope.emp_detail =
+        [
+            { 'name': 'Employee 1', 'skill': 'Machine Learning','state':'Active' },
+            { 'name': 'Employee 2', 'skill': 'Mechanic','state':'Active' },
+            { 'name': 'Employee 3', 'skill': 'Data Scientist','state':'Not-Active' }
+        ];
+        for(let i=0;i<$scope.emp_detail.length;i++)
+        {
+           console.log("$scope.emp_name");
+        }
+        // GET VALUES FROM INPUT BOXES AND ADD A NEW ROW TO THE TABLE.
+        $scope.addRow = function () {
+           
+           console.log($scope.emp_name);
+           console.log($scope.emp_skill);
+           console.log($scope.emp_state);
+          
+            if (($scope.emp_name != null && $scope.emp_skill != null) && $scope.emp_state !=null) {
+             
+                $scope.emp_detail.push({ 'name': $scope.emp_name, 'skill': $scope.emp_skill,'state':$scope.emp_state });
+                console.log($scope.emp_detail.length);
+                foreach(i in $scope.emp_detail)
+                {
+                  console.log(i.name+" "+i.skill+"  "+i.state);
+                }
+
+                // CLEAR TEXTBOX.
+                $scope.emp_name = null;
+                $scope.emp_skill = null;
+                $scope.emp_state = null;
+                 
+            }
+            
+        };
+        
+    });
+
 </script>
 
 <script>
+  // This is the dataTable calling function from the plugins...
   $(function(){
     $("#table").dataTable();
   })

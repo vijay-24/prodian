@@ -27,7 +27,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  -->
 </head>
-<body>
+<body ng-controller="myctrl">
   <h1></h1>
 <div class="alert alert-success text-center">
   <i class="material-icons" style="font-size:36px;left:10px">public</i>
@@ -54,24 +54,24 @@
     </form>
   </div>
 </nav>
- <!-- needs-validation -->
-
+ <!-- needs-validation was-validated-->
+<!-- action="javascript:get_data11()" -->
  <!-- ---------------------------------------------------------------------------- -->
  <div class="container border border-primary py-2 p-3 d-flex align-items-center" style="width:500px;">
-  <form action="javascript:get_data()" class="was-validated" novalidate>
+  <form ng-submit="save_1()" class="needs-validation" novalidate >
     <div class="row px-2 py-1 d-flex align-items-center">
       <div class="col-sm-12 px-4 py-1 alert alert-success d-flex justify-content-center d-flex align-items-center" 
-          ng-controller="myctrl"> {{firstName + " " + lastName}}</div>
+          > {{title1 + " " + title2}}</div>
       <div class="col-sm-6 px-1 py-1" for="tb_name">
         <span class="input-group-text" for="tb_name">First Name</span>
       </div>
       <div class="col-sm-6 px-1 py-1">
-        <input type="text" class="form-control" placeholder="Firstname" id="tb_name" required>
+        <input type="text" class="form-control" placeholder="Firstname" ng-model="firname" id="tb_name" required>
          <div class="valid-feedback">
           Looks good!
         </div>
         <div class="invalid-feedback">
-        Please choose a username.
+        Type your Firstname.
       </div>
       </div>
    
@@ -79,27 +79,33 @@
         <span class="input-group-text" for="tb_lname">Last Name</span>
       </div>
       <div class="col-sm-6 px-1 py-1">
-        <input type="text" class="form-control" placeholder="LastName" id="tb_lname" required>
+        <input type="text" class="form-control" placeholder="LastName" ng-model="laname" id="tb_lname" required>
+          <div class="invalid-tooltip">
+            Enter the LastName
+           </div>
       </div>
       
       <div class="col-sm-6 px-1 py-1">
         <span class="input-group-text" for="tb_fname">Father Name</span>
       </div>
       <div class="col-sm-6 px-1 py-1">
-        <input type="text" class="form-control" placeholder="FatherName" id="tb_fname" required>
+        <input type="text" class="form-control" placeholder="FatherName" ng-model="faname" id="tb_fname" required>
+         <div class="invalid-feedback">
+          Enter Your Date of Birth.
+        </div>
       </div>
       <div class="col-sm-6 px-1 py-1">
         <span class="input-group-text" >Date of Birth</span>
       </div>
       <div class="col-sm-6 px-1 py-1">
-        <input type="date" class="form-control" placeholder="FatherName" id="date" required>
+        <input type="date" class="form-control" placeholder="FatherName" id="date" ng-model="dob" required>
       </div>
 
        <div class="col-sm-6 px-1 py-1">
           <span class="input-group-text" id="basic-addon1" for="tb_email">Email</span>
        </div>
         <div class="col-sm-6 px-1 py-1">
-          <input type="email" class="form-control" placeholder="name@domain.com" id="tb_email" required>
+          <input type="email" class="form-control" placeholder="name@domain.com" ng-model="email" id="tb_email" required>
        </div>
 
         <div class="col-sm-6 px-1 py-1">
@@ -107,19 +113,19 @@
         </div>
         <div class="col-sm-6 px-2 py-1 navbar navbar-expand-lg">
            <div class="form-check">
-              <input class="form-check-input" type="radio" id="rd_male" value="Male" name="rd_gender" required>
+              <input class="form-check-input" type="radio" id="rd_male" value="Male" name="rd_gender" ng-model="gender" required>
                 <label class="form-check-label" for="rd_male">
                   Male
                 </label>
             </div>
             <div class="form-check px-3">
-              <input class="form-check-input" type="radio" id="rd_female" value="Female" name="rd_gender" required>
+              <input class="form-check-input" type="radio" id="rd_female" value="Female" name="rd_gender" ng-model="gender" required>
                 <label class="form-check-label" for="rd_female">
                   Female
                 </label>
             </div>
              <div class="form-check px-4">
-              <input class="form-check-input" type="radio" id="rd_other" value="Other" name="rd_gender" required>
+              <input class="form-check-input" type="radio" id="rd_other" value="Other" name="rd_gender" ng-model="gender" required>
                 <label class="form-check-label" for="rd_other">
                   Other
                 </label>
@@ -129,7 +135,7 @@
           <span class="input-group-text" for="tb_ph">Phone Number</span>
         </div>
         <div class="col-sm-6 px-1 py-1">
-          <input type="tel" pattern="^\d{10}$" id="tb_ph" class="form-control" placeholder="Phone No" required>
+          <input type="tel" pattern="^\d{10}$" id="tb_ph" class="form-control" ng-model="phone" placeholder="Phone No" required>
         </div>
 
 
@@ -138,19 +144,19 @@
         </div> 
         <div class="col-sm-2 px-1 py-1">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" value="Java" name="ch_skill" id="ch_java">
+            <input type="checkbox" class="custom-control-input" value="Java" name="ch_skill" id="ch_java" ng-model="ch_java">
             <label class="custom-control-label" for="ch_java">Java</label>
           </div>
         </div>
         <div class="col-sm-2 px-1 py-1">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" value="HTML" name="ch_skill" id="ch_html">
+            <input type="checkbox" class="custom-control-input" value="HTML" name="ch_skill" id="ch_html" ng-model="ch_html">
             <label class="custom-control-label" for="ch_html">HTML</label>
          </div>
         </div>
         <div class="col-sm-2 px-1 py-1">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" value="Python" name="ch_skill" id="ch_python">
+            <input type="checkbox" class="custom-control-input" value="Python" name="ch_skill" id="ch_python" ng-model="ch_python">
             <label class="custom-control-label" for="ch_python">Python</label>
             </div>
         </div>
@@ -161,7 +167,7 @@
           <label class="form-control">Photo</label>
         </div>
         <div class="col-sm-6 px-1 py-1">
-          <input type="file" class="form-control" required>
+          <input type="file" class="form-control" ng-model="photo" required>
         </div>
         <hr>
         <div class="col-sm-6 px-1 py-1">
@@ -178,7 +184,7 @@
 <br>
 <center>
       <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="show_1()">
       Show Details on Modal
     </button>
 </center>
@@ -220,14 +226,15 @@
       </div>
       <div class="modal-body">
       
-        <p id="p_name">Empty !!..<p>
-        <p id="p_lname"><p>
-        <p id="p_fname">Have a Nice Day .. <p>
-        <p id="p_dob"><p>
-        <p id="p_email"><p>
-        <p id="p_ph"><p>
-        <p id="p_gender"><p>
-        <p id="p_skill"><p>
+        <p id="p_name" ng-model="p_name">{{"First Name :"+An_firname}}<p>
+        <p id="p_lname" ng-model="p_lname">{{"Last Name :"+An_laname}}<p>
+        <p id="p_fname" ng-model="p_fname">{{"Father Name :"+An_faname}} <p>
+        <p id="p_dob" ng-model="p_dob">{{"Date of Birth :"+An_date}}<p>
+        <p id="p_email" ng-model="p_email">{{"Email :"+An_email}}<p>
+        <p id="p_ph" ng-model="p_ph">{{"Phone No. :"+An_phone}}<p>
+        <p id="p_gender" ng-model="p_gender">{{"Gener :"+An_gender}}<p>
+        <p id="p_skill" ng-model="p_skill">{{"Skills :"+An_skills}}<p>
+
 
       </div>
       <div class="modal-footer">
@@ -241,13 +248,39 @@
 <!-- ------------------===models end------------------------ -->
 <br>
 
-<i class="material-icons" style="font-size:36px">add_a_photo</i>
-
-
+<button ng-click="myctrl_1()">
+<i class="material-icons" style="font-size:36px">add_a_photo</i></button>
+<a ng-click="myctrl_1()">Open!</a>
+<p>The button has been clicked {{count}} times.</p>
 
 
 </body>
 
 <script type="text/javascript" src="D:/prodian_workspace/Traning/javascript/Form_query.js"></script>
+
+<script type="text/javascript">
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+</script>
 
 </html>
