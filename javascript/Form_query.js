@@ -7,10 +7,82 @@ app.directive("mytitle", function() {
 }); 
 
 app.controller('myctrl', function($scope) {  
-    $scope.firstName = "Employee Registration ";  
-    $scope.lastName = "Form";  
-});  
+    $scope.title1 = "Employee Registration ";  
+    $scope.title2 = "Form";  
+    
+    $scope.count = 0;
 
+    $scope.An_firname="This is empty..!! ";
+    $scope.An_laname="";
+    $scope.An_faname="";
+    $scope.An_date=new Date();
+    $scope.An_phone;
+    $scope.An_email="";
+    $scope.An_gender="";
+    $scope.An_skills=""
+    $scope.An_img="";
+
+    $scope.myctrl_1=function(){
+      $scope.count++;
+      console.log("myctrl_1 working");
+    }
+
+    $scope.save_1=function(){
+    //    $scope.firname= $scope.firname ;
+    // $scope.laname= " hussy ";
+    // $scope.faname= "joe";
+    console.log($scope.ch_java.Selected);
+        if($scope.ch_java.selected){
+            $scope.An_skills="Java ";
+            console.log("1");
+        }
+        if($scope.ch_html){
+            $scope.An_skills+="Html ";
+            console.log("1");
+        }
+        if($scope.ch_python){
+            $scope.An_skill+="Python ";
+            console.log("1");
+        }
+
+        $scope.An_firname=$scope.firname;
+        $scope.An_laname=$scope.laname;
+        $scope.An_faname=$scope.faname;
+        $scope.An_date=$scope.dob.getDate();
+        $scope.An_phone=$scope.phone;
+        $scope.An_email=$scope.email;
+        $scope.An_gender=$scope.gender;
+        $scope.An_skills=$scope.skill;
+        $scope.An_img= $scope.photo;
+
+
+        console.log($scope.An_firname);
+        console.log($scope.An_laname);
+        console.log($scope.An_faname);
+        console.log($scope.An_date);
+        console.log($scope.An_phone);
+        console.log($scope.An_email);
+        console.log($scope.An_gender);
+        console.log($scope.An_skills);     
+        console.log($scope.An_img);     
+        console.log("save working");
+    }
+
+    $scope.show_1=function(){
+        $scope.p_name=$scope.An_firname;
+        $scope.p_lname=$scope.An_laname;
+        $scope.p_fname=$scope.An_faname;
+        $scope.p_dob=$scope.An_date;
+        $scope.p_ph=$scope.An_phone;
+        $scope.p_email=$scope.An_email;
+        $scope.p_gender=$scope.An_gender;
+        $scope.p_skill=$scope.An_skills;
+        
+    }
+
+
+
+});  
 
 
 
