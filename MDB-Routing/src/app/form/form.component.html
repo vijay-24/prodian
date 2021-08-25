@@ -11,11 +11,17 @@
     <div class="container border border-primary py-2 p-3 d-flex align-items-center" style="width:50%;">
         
             <!-- Material form grid -->
-            <form>
+            <form #simpleForm="ngForm" (ngSubmit)="onSubmit(simpleForm.value)">
                 <!-- Grid row -->
-                <div class="row" style="width:150%;">
+                <div class="row">
                     <!-- Grid column -->
-                    <div class="col">
+                    <div class="col-md-12 ">
+                        <!-- Material input -->
+                        <div class="md-form mt-0 alert-success">
+                            <span class="input-group-text" for="tb_name">Employee Registration Form</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <!-- Material input -->
                         <div class="md-form mt-0">
                             <span class="input-group-text" for="tb_name">First Name</span>
@@ -24,13 +30,14 @@
                     <!-- Grid column -->
                     
                     <!-- Grid column -->
-                    <div class="col" >
+                    <div class="col-md-6" >
                         <!-- Material input -->
-                        <div class="md-form mt-0">
-                            <input mdbInput type="text" class="form-control">
+                        <div class="md-form mt-0 form-outline">
+                            <input mdbInput type="text" ngModel name="fname" class="form-control" id="tb_name">
                             <label for="form1" class="">First Name</label>
                         </div>
                     </div>
+
                     <!-- Grid column -->
                 </div>
                 <div class="row">
@@ -47,7 +54,7 @@
                     <div class="col">
                         <!-- Material input -->
                         <div class="md-form mt-0">
-                            <input mdbInput type="text" class="form-control">
+                            <input mdbInput type="text" ngModel name="lname" class="form-control">
                             <label for="form1" class="">Last Name</label>
                         </div>
                     </div>
@@ -67,7 +74,7 @@
                     <div class="col">
                         <!-- Material input -->
                         <div class="md-form mt-0">
-                            <input mdbInput type="text" class="form-control">
+                            <input mdbInput type="text" ngModel name="faname" class="form-control">
                             <label for="form1" class="">Father Name</label>
                         </div>
                     </div>
@@ -87,34 +94,83 @@
                     <div class="col">
                         <!-- Material input -->
                         <div class="md-form mt-0">
-                            <input mdbInput type="text" class="form-control">
+                            <input mdbInput type="number" ngModel name="phno" class="form-control">
                             <label for="form1" class="">Phone NUmber</label>
                         </div>
                     </div>
                     <!-- Grid column -->
                 </div>
-
                 <div class="row">
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Material input -->
-                        <button type="button" class="btn btn-success" routerLink="/ca">Submit</button>
+                        <div class="md-form mt-0">
+                            <span class="input-group-text"  for="tb_name">Date of Birth</span>
+                        </div>
                     </div>
                     <!-- Grid column -->
                     
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Material input -->
-                        <button type="button" class="btn btn-warning" routerLink="/ca">Reset</button>
+                        
+                        <div class="md-form mt-0">
+                            <input type="date" class="form-control" ngModel name="dob">
+                        </div>
                     </div>
                     <!-- Grid column -->
                 </div>
-               
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Material input -->
+                        <div class="md-form mt-0">
+                            <span class="input-group-text" for="tb_name">Gender</span>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <!-- Material input -->
+                        <input class="form-check-input" type="radio" id="rd_male" value="Male" ngModel name="rd_gender">
+                        <label class="form-check-label" for="rd_male"> Male </label> 
+                    </div>  
+                    <div class="col-md-2">     
+                        <input class="form-check-input" type="radio" id="rd_female" value="Female" ngModel name="rd_gender">
+                        <label class="form-check-label" for="rd_female"> Female </label>
+                    </div>
+                      <div class="col-md-2">
+                        <input class="form-check-input" type="radio" id="rd_other" value="Other" ngModel name="rd_gender">
+                        <label class="form-check-label" for="rd_other"> Other </label>
+                      </div>
+                    <!-- Grid column -->
+                </div>
+
+
+
+                <!-- Buttons  -->
+
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-6">
+                        <!-- Material input -->
+                        <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
+                    </div>
+                    <!-- Grid column -->
+                    
+                    <!-- Grid column -->
+                    <div class="col-6">
+                        <!-- Material input -->
+                        <button type="reset" class="btn btn-warning" style="width: 100%;">Reset</button>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                
         </form>
     
     </div>
 
-    
 
-
+<br>
 </body>

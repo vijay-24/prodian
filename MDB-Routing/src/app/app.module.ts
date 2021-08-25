@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule,MyComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -14,6 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
