@@ -1,6 +1,4 @@
 
-<!-- Nav Bar sTart -->
-<!-- navbar-light bg-light -->
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5">
@@ -174,7 +172,7 @@
         <div class="col-sm-12 ">
                 <div class="md-form">
                    <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
-                    <textarea type="text" id="desc" class="md-textarea form-control" name="text" rows="5" mdbInput ngModel required></textarea>
+                    <textarea type="text" id="desc" class="md-textarea form-control" name="desc" rows="5" mdbInput ngModel required></textarea>
                     <label for="desc">Your message</label>
                 </div>
           </div>
@@ -182,19 +180,18 @@
     
            
       <div class="row">
-        <!-- Grid column -->
-        <div class="col-12">
-            <!-- Material input -->
-            <button type="submit" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#exampleModal" >Submit</button>
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary w-100" data-toggle="modal" data-target="#exampleModal" >Submit</button>
+         </div>
+        <div class="col-6">
+          <button type="reset" class="btn btn-warning w-100">Reset</button>
         </div>
       </div> 
     </div> 
     </form>
     <br>
-    {{alldata}}
+  
 
-      <!-- Button trigger modal -->
- 
 
   <!-- ----------------------Models------------------------- -->
 
@@ -204,13 +201,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{alldata}}Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="false">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>{{alldata}} Successfullly saved Your data !!<p>
+        <p>Name : {{data[count-0]["name"]}}</p>
+        <p>Email : {{data[count-0]["email"]}}</p>
+        <p>Mobile : {{data[count-0]["mobile"]}}</p>
+        <p>Description : {{data[count-0]["desc"]}}</p>
+        <strong> Your Data Saved Successfully !!</strong>
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

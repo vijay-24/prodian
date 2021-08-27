@@ -158,12 +158,12 @@
       </thead>
       <tbody id="tbody">
         
-        <tr>
-            <td>{{firstname}} John</td>
-            <td> {{lastname}}son </td>
-            <td>{{dob}} 22/11/2021</td>
-            <td> {{email}}john@gmail.com</td>
-            <td> {{mobile}}9788331203 </td>
+        <tr *ngFor="let emp of data">
+            <td> {{emp.firstName}}</td>
+            <td> {{emp.lastName}}</td>
+            <td> {{emp.dob}}</td>
+            <td> {{emp.email}}</td>
+            <td> {{emp.mobile}}</td>
         </tr> 
         
       </tbody>
@@ -173,12 +173,6 @@
 <!-- table part end -->
 <br><br>
 <!-- employeee details added part -->
-<!-- class="was-validated1" -->
-
-
-
-<!-- (click)="getData1()" -->
-
 
   <!-- ----------------------Models------------------------- -->
 
@@ -209,7 +203,7 @@
               
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input mdbInput type="text" name="firstname" class="form-control" id="firstname" required ngModel >
+                  <input mdbInput type="text" name="firstName" class="form-control" id="firstname" required ngModel >
                   <label for="firstname" class="">First Name</label>
                   <div class="invalid-feedback" id="div_firstname">
                       Enter Your First Name !!
@@ -219,7 +213,7 @@
           
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input  type="text" name="lastname" class="form-control" id="lastname" required ngModel mdbInput>
+                  <input  type="text" name="lastName" class="form-control" id="lastname" required ngModel mdbInput>
                   <label for="lastname" class="">Last Name</label>
                   <div class="invalid-feedback" id="div_lastname">
                       Enter Your Last Name !!
@@ -239,8 +233,8 @@
             
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input  type="number" name="Mobile" class="form-control" id="Mobile" required ngModel mdbInput>
-                  <label for="Mobile" class="">Mobile</label>
+                  <input  type="number" name="mobile" class="form-control" id="mobile" required ngModel mdbInput>
+                  <label for="mobile" class="">Mobile</label>
                   <div class="invalid-feedback" id="div_Mobile">
                       Enter Your Mobile !!
                   </div> 
@@ -256,8 +250,15 @@
                     </div> 
                  </div>
                </div>
-          
+               
+               <div class="row px-2">
+                  <div class="col-12">
+                    <button type="reset" class="btn btn-warning w-100">Reset </button>
+                  </div>
+                </div> 
+
           </div> 
+
           </form>
 
         <!-- Form Ends -->
@@ -267,12 +268,13 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
+    
   </div>
 </div>
 
 
 <br>
-<button type="button" class="btn btn-secondary" (click)="demo()">Close</button>
+
 <!-- ------------------===models end------------------------ -->
 
 <footer class="page-footer font-small blue pt-4 fixed-bottom">

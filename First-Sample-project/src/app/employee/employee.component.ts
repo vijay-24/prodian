@@ -11,30 +11,32 @@ export class EmployeeComponent implements OnInit {
 
   imageSrc = 'assets/images/img1.jpg';
 
+  data: Array<any>;
+
   firstname="peter";
   lastname="son";
   dob="12/12/2021";
   email="peter@gmail.com";
   mobile="9788331203";
 
-  constructor() { }
+  constructor() { 
+    this.data = [
+      { firstName: 'John', lastName: 'Doe', dob: '12/12/2010' ,email:'john@gmail.com',mobile:'9788331203'},
+      { firstName: 'Michael', lastName: 'Smith', dob: '12/12/2010',email:'michael@gmail.com' ,mobile:'9788331203'},
+      { firstName: 'Michael', lastName: 'Jordan', dob: '12/12/2010',email:'michael@gmail.com',mobile:'9788331203' },
+      { firstName: 'Tanya', lastName: 'Blake', dob: '12/12/2010',email: 'tanya@gmail.com',mobile:'9788331203'}
+  ];
+  }
   
   ngOnInit(): void {
   }
 
   getData(form:NgForm){
     console.log(form);
-    console.log();
-    
+    this.data.push(form);
   }
   
-  demo(){
-    this.firstname="peter";
-    this.lastname="son";
-    this.dob="12/12/2021";
-    this.email="peter@gmail.com";
-    this.mobile="9788331203";
-  }
+ 
  
 
 }

@@ -10,15 +10,22 @@ export class FeedbackComponent implements OnInit {
 
   alldata = " this is all data";
   
+  data:Array<any>;
+  count=0;
 
-  constructor() { }
+  constructor() { 
+    this.data=[{name:"",email:"bad@gmail.com",mobile:"9788645",desc:"Description"}]
+  }
 
   ngOnInit(): void {
   }
 
   printFeedBack(form:NgForm){
-      console.log(form);
-     // this.alldata = form.value;
+     console.log(form);
+     this.data.push(form);
+     console.log(this.data[1]["name"]);
+     console.log(this.count);
+     this.count++;
   }
 
 }
