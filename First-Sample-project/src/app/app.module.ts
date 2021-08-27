@@ -11,6 +11,10 @@ import { SportComponent } from './sport/sport.component';
 import { AboutComponent } from './about/about.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 
+import { ReactiveFormsModule,FormsModule } from '@angular/forms'; 
+import {FormBuilder,FormGroup } from  '@angular/forms';  
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +27,10 @@ import { FeedbackComponent } from './feedback/feedback.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

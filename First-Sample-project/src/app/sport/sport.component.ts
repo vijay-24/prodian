@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SportComponent implements OnInit {
 
+  football = 'assets/images/football.jpg';
+  cricket = 'assets/images/cricket.jpg';
+  basketball = 'assets/images/basketball.jpg';
+  hockey = 'assets/images/hockey.jpg';
+  
+
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,227 @@
-<p>sport works!</p>
+
+<!-- Nav Bar sTart -->
+<!-- navbar-light bg-light --><div id="nav_bar">
+  <nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <i class="material-icons" style="font-size:36px;left:10px">public</i>
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/employee">Employees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sport">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/feedback">Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About us</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+  
+        <!-- Notifications -->
+        <a
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" routerLink="/">Login</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/employee">Employees</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/sport">Sports</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/about">About us</a>
+          </li>
+        </ul>
+  
+        <!-- Avatar -->
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+            class="rounded-circle"
+            height="25"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+        <li>
+          <a class="dropdown-item" routerLink="/">Login</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/employee">Employees</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/sport">Sports</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/about">About us</a>
+        </li>
+        </ul>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    
+  
+      
+
+
+
+<br>
+<h1 class="border border-primary alert-primary rounded-pill text-center">Sports Form</h1><br>
+
+
+
+<div class="row flex-center">
+<div class="card w-25 col-3 view overlay zoom">
+  <img
+    src="{{football}}"
+    class="card-img-top"
+    alt="..."
+  />
+    <div class="card-body">
+      <h5 class="card-title">FootBall</h5>
+      <p class="card-text">
+       
+      </p>
+      <a href="#!" class="btn btn-primary">Select</a>
+    </div>
+  </div>
+
+    <div class="card w-25 col-3">
+      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+        <img
+          src="{{cricket}}"
+          class="img-fluid"
+        />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Cricket</h5>
+        <p class="card-text">
+          
+        </p>
+        <a href="#!" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+
+    <div class="card w-25 col-3">
+      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+        <img
+          src="{{basketball}}"
+          class="img-fluid"
+        />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Bastket Ball</h5>
+        <p class="card-text">
+         
+        </p>
+        <a href="#!" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+
+    <div class="card w-25 col-3">
+      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+        <img
+          src="{{hockey}}"
+          class="img-fluid"
+        />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Hockey</h5>
+        <p class="card-text">
+          
+        </p>
+        <a href="#!" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+
+    
+
+
+
+  </div>
+
+<br>
+
+  <footer class="page-footer font-small blue pt-4">
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+        <a href="https://mdbootstrap.com/"> Company.com</a>
+    </div>
+</footer>

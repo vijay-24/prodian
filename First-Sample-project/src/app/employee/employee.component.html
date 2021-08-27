@@ -1,1 +1,297 @@
-<p>employee works!</p>
+
+<!-- Nav Bar sTart -->
+<!-- navbar-light bg-light -->
+<nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <i class="material-icons" style="font-size:36px;left:10px">public</i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employee">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sport">Sports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/feedback">Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About us</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <a
+        class="text-reset me-3 dropdown-toggle hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bell"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" routerLink="/">Login</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/employee">Employees</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/sport">Sports</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/about">About us</a>
+        </li>
+      </ul>
+
+      <!-- Avatar -->
+      <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+          class="rounded-circle"
+          height="25"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+      <li>
+        <a class="dropdown-item" routerLink="/">Login</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/employee">Employees</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/sport">Sports</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/about">About us</a>
+      </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+  
+
+  
+
+
+
+<br>
+<h1 class="border border-primary alert-primary rounded-5 text-center">Employee Details Form</h1><br>
+
+  <!-- Button trigger modal -->
+  <div class="container">
+  <button type="button" class="btn btn-primary px-20" data-toggle="modal" data-target="#exampleModal">
+    Add
+  </button>
+  </div>
+
+
+<!-- Table part -->
+<div class="container alert border-primary rounded-5">
+    <table class="border-primary mt-2" id="table" >
+      <thead class="alert alert-success">
+       
+        <td class="col-3"> First Name</td>
+        <td  class="col-3"> Last Name </td>
+        <td  class="col-3"> Date of Birth</td>
+        <td  class="col-3"> Email</td>
+        <td  class="col-3"> MObile </td>
+      </thead>
+      <tbody id="tbody">
+        
+        <tr>
+            <td>{{firstname}} John</td>
+            <td> {{lastname}}son </td>
+            <td>{{dob}} 22/11/2021</td>
+            <td> {{email}}john@gmail.com</td>
+            <td> {{mobile}}9788331203 </td>
+        </tr> 
+        
+      </tbody>
+    </table>
+  </div>
+
+<!-- table part end -->
+<br><br>
+<!-- employeee details added part -->
+<!-- class="was-validated1" -->
+
+
+
+<!-- (click)="getData1()" -->
+
+
+  <!-- ----------------------Models------------------------- -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="false">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+       
+        <!-- -----Form start ----- -->
+
+        <form  #empModel="ngForm" (submit)="getData(empModel.value)">
+          <div class="container border border-primary px-2 py-2 rounded-5 w-100">
+              <div class="col-sm-12 px-2 py-2 alert alert-success">
+                <p class="text-center">
+                  Enter Employee Details
+                </p>
+                </div>
+          
+              
+              <div class="row px-2">
+                <div class="md-form mt-0 form-outline" >
+                  <input mdbInput type="text" name="firstname" class="form-control" id="firstname" required ngModel >
+                  <label for="firstname" class="">First Name</label>
+                  <div class="invalid-feedback" id="div_firstname">
+                      Enter Your First Name !!
+                  </div> 
+               </div>
+              </div>
+          
+              <div class="row px-2">
+                <div class="md-form mt-0 form-outline" >
+                  <input  type="text" name="lastname" class="form-control" id="lastname" required ngModel mdbInput>
+                  <label for="lastname" class="">Last Name</label>
+                  <div class="invalid-feedback" id="div_lastname">
+                      Enter Your Last Name !!
+                  </div> 
+               </div>
+              </div>
+            
+              <div class="row px-2">
+                <div class="md-form mt-0 form-outline" >
+                  <input  type="email" name="email" class="form-control" id="email" required ngModel mdbInput>
+                  <label for="email" class="">Email Id</label>
+                  <div class="invalid-feedback" id="div_email">
+                      Enter Your Email Id like: john@mail !!
+                  </div> 
+               </div>
+              </div>
+            
+              <div class="row px-2">
+                <div class="md-form mt-0 form-outline" >
+                  <input  type="number" name="Mobile" class="form-control" id="Mobile" required ngModel mdbInput>
+                  <label for="Mobile" class="">Mobile</label>
+                  <div class="invalid-feedback" id="div_Mobile">
+                      Enter Your Mobile !!
+                  </div> 
+               </div>
+              </div>
+               
+                <div class="row px-2">
+                  <div class="md-form mt-0 form-outline" >
+                    <input  type="date" name="dob" class="form-control" id="dob" required ngModel mdbInput>
+                    <label for="dob" class="">Date of Birth</label>
+                    <div class="invalid-feedback" id="div_dob">
+                        Enter Your Date of Birth !!
+                    </div> 
+                 </div>
+               </div>
+          
+          </div> 
+          </form>
+
+        <!-- Form Ends -->
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" (click)="getData(empModel.value)">Save </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<button type="button" class="btn btn-secondary" (click)="demo()">Close</button>
+<!-- ------------------===models end------------------------ -->
+
+<footer class="page-footer font-small blue pt-4 fixed-bottom">
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+      <a href="https://mdbootstrap.com/"> Company.com</a>
+    </div>
+  </footer>
+
+<!-- 
+  <form [formGroup]="validatingForm">
+    <div class="md-form">
+      <input mdbInput mdbValidate type="text" id="form1" class="form-control" formControlName="required">
+      <label for="form1">Required validator</label>
+      <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+      <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
+    </div>
+  </form>
+   -->
+<!--Zoom effect-->
+
+
+

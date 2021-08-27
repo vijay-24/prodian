@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
+  alldata = " this is all data";
+  
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  printFeedBack(form:NgForm){
+      console.log(form);
+     // this.alldata = form.value;
   }
 
 }

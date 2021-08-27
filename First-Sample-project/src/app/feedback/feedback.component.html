@@ -1,1 +1,223 @@
-<p>feedback works!</p>
+
+<!-- Nav Bar sTart -->
+<!-- navbar-light bg-light -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <i class="material-icons" style="font-size:36px;left:10px">public</i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employee">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sport">Sports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/feedback">Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About us</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <a
+        class="text-reset me-3 dropdown-toggle hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bell"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" routerLink="/">Login</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/employee">Employees</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/sport">Sports</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/about">About us</a>
+        </li>
+      </ul>
+
+      <!-- Avatar -->
+      <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+          class="rounded-circle"
+          height="25"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+      <li>
+        <a class="dropdown-item" routerLink="/">Login</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/employee">Employees</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/sport">Sports</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/feedback">Feedback</a>
+      </li>
+      <li>
+        <a class="dropdown-item" routerLink="/about">About us</a>
+      </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+  
+
+  
+
+
+
+
+
+<br>
+<h1 class="border border-primary alert-primary rounded-pill text-center">Feedback Form</h1><br>
+
+<form #feedback="ngForm" (ngSubmit)="printFeedBack(feedback.value)">
+    <div class="container border border-primary px-2 py-2 rounded-5" style="width:500px;">
+        <div class="col-sm-12 px-2 py-2 alert alert-success rounded-5">
+            <p class="text-center">
+              Enter Your Feedback 
+            </p>
+          </div>
+          
+          <div class="col-sm-12">
+            <div class="md-form">
+                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="name" class="form-control" name="name" mdbInput ngModel required>
+                <label for="name">Your name</label>
+              </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="md-form">
+                <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+                <input type="email" id="email" class="form-control" name="email" mdbInput ngModel required>
+                <label for="email">Your Mail Id</label>
+              </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="md-form">
+                <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
+                <input type="number" id="mobile" class="form-control" name="mobile" mdbInput ngModel required>
+                <label for="mobile">Your Mobile Number</label>
+              </div>
+         </div>
+        
+        <div class="col-sm-12 ">
+                <div class="md-form">
+                   <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+                    <textarea type="text" id="desc" class="md-textarea form-control" name="text" rows="5" mdbInput ngModel required></textarea>
+                    <label for="desc">Your message</label>
+                </div>
+          </div>
+          
+    
+           
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-12">
+            <!-- Material input -->
+            <button type="submit" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#exampleModal" >Submit</button>
+        </div>
+      </div> 
+    </div> 
+    </form>
+    <br>
+    {{alldata}}
+
+      <!-- Button trigger modal -->
+ 
+
+  <!-- ----------------------Models------------------------- -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{alldata}}Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="false">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{alldata}} Successfullly saved Your data !!<p>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------===models end------------------------ -->
+
