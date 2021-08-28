@@ -140,7 +140,7 @@
 <h1 class="border border-primary alert-primary rounded-pill text-center">Feedback Form</h1><br>
 
 <form #feedback="ngForm" (ngSubmit)="printFeedBack(feedback.value)">
-    <div class="container border border-primary px-2 py-2 rounded-5" style="width:500px;">
+    <div class="container border border-primary px-2 py-2 rounded-5 w-50" >
         <div class="col-sm-12 px-2 py-2 alert alert-success rounded-5">
             <p class="text-center">
               Enter Your Feedback 
@@ -150,45 +150,70 @@
           <div class="col-sm-12">
             <div class="md-form">
                 <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-                <input type="text" id="name" class="form-control" name="name" mdbInput ngModel required>
+                <input type="text" id="name" class="form-control" name="name" 
+                  #name="ngModel" pattern="[a-zA-Z ]{2,}$" [class.is-invalid]="name.invalid && name.touched" 
+                  mdbInput ngModel required>
                 <label for="name">Your name</label>
+                <div class="invalid-feedback">
+                  Enter your Name !!
               </div>
+            </div>
          </div>
+
          <div class="col-sm-12">
             <div class="md-form">
                 <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-                <input type="email" id="email" class="form-control" name="email" mdbInput ngModel required>
+                <input type="email" id="email" class="form-control" name="email" 
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]{2,}$" #email="ngModel" 
+                  [class.is-invalid]="email.invalid && email.touched" mdbInput ngModel required>
                 <label for="email">Your Mail Id</label>
-              </div>
+                <div class="invalid-feedback">
+                  Enter Your Proper Mail Id (like: "john@mail")
+              </div> 
+            </div>
          </div>
+
          <div class="col-sm-12">
             <div class="md-form">
                 <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
-                <input type="number" id="mobile" class="form-control" name="mobile" mdbInput ngModel required>
+                <input type="number" id="mobile" class="form-control" name="mobile" 
+                #mobile="ngModel" pattern="[0-9]{10,10}$"  [class.is-invalid]="mobile.invalid && mobile.touched" 
+                mdbInput ngModel required>
                 <label for="mobile">Your Mobile Number</label>
-              </div>
+                <div class="invalid-feedback">
+                  Enter Your Mobile (10 Digit only) !! 
+              </div> 
+            </div>
          </div>
         
         <div class="col-sm-12 ">
                 <div class="md-form">
                    <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
-                    <textarea type="text" id="desc" class="md-textarea form-control" name="desc" rows="5" mdbInput ngModel required></textarea>
-                    <label for="desc">Your message</label>
+                    <textarea type="text" id="desc1" class="md-textarea form-control" name="desc" rows="5" 
+                    #desc="ngModel" pattern="[a-zA-Z0-9 ]{1,}$" [class.is-invalid]="desc.invalid && desc.touched"
+                     mdbInput ngModel required></textarea>
+                    <label for="desc1">Your message</label>
+                    <div class="invalid-feedback">
+                      Enter Your Message !! 
+                  </div>
                 </div>
           </div>
           
     
            
       <div class="row">
-        <div class="col-6">
-            <button type="submit" class="btn btn-primary w-100" data-toggle="modal" data-target="#exampleModal" >Submit</button>
-         </div>
-        <div class="col-6">
-          <button type="reset" class="btn btn-warning w-100">Reset</button>
-        </div>
+          <div class="col-6">
+              <button type="submit" class="btn btn-primary w-100" data-toggle="modal" data-target="#exampleModal" 
+              [disabled]="feedback.form.invalid">Submit</button>
+          </div>
+          <div class="col-6">
+            <button type="reset" class="btn btn-warning w-100">Reset</button>
+          </div>
       </div> 
-    </div> 
-    </form>
+
+
+<!-- </div> -->
+<!-- </form> -->
     <br>
   
 

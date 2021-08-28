@@ -147,19 +147,20 @@
 
 <!-- Table part -->
 <div class="container alert border-primary rounded-5">
-    <table class="border-primary mt-2" id="table" >
-      <thead class="alert alert-success">
+    <table mdbTable class="border-primary mt-2" Hover="True">
+      <thead class="blue">
        
         <td class="col-3"> First Name</td>
         <td  class="col-3"> Last Name </td>
         <td  class="col-3"> Date of Birth</td>
         <td  class="col-3"> Email</td>
         <td  class="col-3"> MObile </td>
+      
       </thead>
       <tbody id="tbody">
         
-        <tr *ngFor="let emp of data">
-            <td> {{emp.firstName}}</td>
+        <tr mdbTableCol *ngFor="let emp of data">
+            <td > {{emp.firstName}}</td>
             <td> {{emp.lastName}}</td>
             <td> {{emp.dob}}</td>
             <td> {{emp.email}}</td>
@@ -183,7 +184,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="reset" class="close" aria-label="Close" (click)="getData(empModel.value)" 
+            data-dismiss="modal" [disabled]="empModel.form.invalid">
           <span aria-hidden="false">&times;</span>
         </button>
       </div>
@@ -192,7 +194,7 @@
        
         <!-- -----Form start ----- -->
 
-        <form  #empModel="ngForm" (submit)="getData(empModel.value)">
+        <form  #empModel="ngForm" (submit)="getData(empModel.value)" onload="reset">
           <div class="container border border-primary px-2 py-2 rounded-5 w-100">
               <div class="col-sm-12 px-2 py-2 alert alert-success">
                 <p class="text-center">
@@ -203,8 +205,10 @@
               
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input mdbInput type="text" name="firstName" class="form-control" id="firstname" required ngModel >
-                  <label for="firstname" class="">First Name</label>
+                  <input mdbInput type="text" name="firstName" class="form-control" id="firstname" 
+                  #firstName="ngModel" pattern="[a-zA-Z ]{1,}$" [class.is-invalid]="firstName.invalid && firstName.touched"
+                   required ngModel >
+                  <label for="firstname" >First Name</label>
                   <div class="invalid-feedback" id="div_firstname">
                       Enter Your First Name !!
                   </div> 
@@ -213,7 +217,9 @@
           
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input  type="text" name="lastName" class="form-control" id="lastname" required ngModel mdbInput>
+                  <input  type="text" name="lastName" class="form-control" id="lastname"
+                    #lastname="ngModel" pattern="[a-zA-Z ]{1,}$" [class.is-invalid]="lastname.invalid && lastname.touched"
+                    required ngModel mdbInput>
                   <label for="lastname" class="">Last Name</label>
                   <div class="invalid-feedback" id="div_lastname">
                       Enter Your Last Name !!
@@ -223,28 +229,34 @@
             
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input  type="email" name="email" class="form-control" id="email" required ngModel mdbInput>
-                  <label for="email" class="">Email Id</label>
-                  <div class="invalid-feedback" id="div_email">
-                      Enter Your Email Id like: john@mail !!
-                  </div> 
+                  <input type="email" id="email" class="form-control" name="email" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]{2,}$" #email="ngModel" 
+                    [class.is-invalid]="email.invalid && email.touched" mdbInput ngModel required>
+                <label for="email">Your Mail Id</label>
+                <div class="invalid-feedback">
+                  Enter Your Proper Mail Id (like: "john@mail")
+              </div> 
                </div>
               </div>
             
               <div class="row px-2">
                 <div class="md-form mt-0 form-outline" >
-                  <input  type="number" name="mobile" class="form-control" id="mobile" required ngModel mdbInput>
-                  <label for="mobile" class="">Mobile</label>
-                  <div class="invalid-feedback" id="div_Mobile">
-                      Enter Your Mobile !!
-                  </div> 
+                  <input type="number" id="mobile" class="form-control" name="mobile" 
+                  #mobile="ngModel" pattern="[0-9]{10,10}$"  [class.is-invalid]="mobile.invalid && mobile.touched" 
+                  mdbInput ngModel required>
+                  <label for="mobile">Your Mobile Number</label>
+                  <div class="invalid-feedback">
+                    Enter Your Mobile (10 Digit only) !! 
+                </div> 
                </div>
               </div>
                
                 <div class="row px-2">
                   <div class="md-form mt-0 form-outline" >
-                    <input  type="date" name="dob" class="form-control" id="dob" required ngModel mdbInput>
-                    <label for="dob" class="">Date of Birth</label>
+                    <input  type="date" name="dob" class="form-control" id="dob" 
+                    #dob="ngModel" pattern="[0-9+-+0-9+-0-9]{10,10}$"  [class.is-invalid]="dob.invalid && dob.touched" 
+                     required ngModel mdbInput>
+                    <label for="dob">Date of Birth</label>
                     <div class="invalid-feedback" id="div_dob">
                         Enter Your Date of Birth !!
                     </div> 
@@ -264,9 +276,9 @@
         <!-- Form Ends -->
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" (click)="getData(empModel.value)">Save </button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+        <button type="submit" class="btn btn-primary" (click)="getData(empModel.value)" 
+          data-dismiss="modal" [disabled]="empModel.form.invalid">Save </button>
+        </div>
     </div>
     
   </div>
@@ -282,18 +294,6 @@
       <a href="https://mdbootstrap.com/"> Company.com</a>
     </div>
   </footer>
-
-<!-- 
-  <form [formGroup]="validatingForm">
-    <div class="md-form">
-      <input mdbInput mdbValidate type="text" id="form1" class="form-control" formControlName="required">
-      <label for="form1">Required validator</label>
-      <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
-      <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
-    </div>
-  </form>
-   -->
-<!--Zoom effect-->
 
 
 

@@ -137,23 +137,29 @@
 <br>
 <h1 class="border border-primary alert-primary rounded-pill text-center">Sports Form</h1><br>
 
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="materialUnchecked">
+  <label class="form-check-label" for="materialUnchecked">good</label>
+</div>
 
+<div class="container px-2 mx-3 border border-primary">
 
-<div class="row flex-center">
-<div class="card w-25 col-3 view overlay zoom">
-  <img
-    src="{{football}}"
-    class="card-img-top"
-    alt="..."
-  />
-    <div class="card-body">
-      <h5 class="card-title">FootBall</h5>
-      <p class="card-text">
-       
-      </p>
-      <a href="#!" class="btn btn-primary">Select</a>
-    </div>
-  </div>
+<div class="row">
+    <div class="card w-25 col-3 view overlay zoom" for="materialUnchecked">
+      <img
+        src="{{football}}"
+        class="card-img-top"
+        alt="..." for="materialUnchecked"
+      />
+      
+        <div class="card-body" for="materialUnchecked">
+          <h5 class="card-title" for="ch_football">FootBall</h5>
+          <p class="card-text">
+          
+          </p>
+          <a class="btn btn-primary" for="materialUnchecked">Select</a>
+        </div>
+      </div>
 
     <div class="card w-25 col-3">
       <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
@@ -211,16 +217,68 @@
         <a href="#!" class="btn btn-primary">Select</a>
       </div>
     </div>
-
-    
-
-
-
+  </div>
+      
+   
   </div>
 
 <br>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="football">
+  <label class="form-check-label" for="football">football</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="cricket">
+  <label class="form-check-label" for="cricket">cricket</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="hockey">
+  <label class="form-check-label" for="hockey">hockey</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="b ball">
+  <label class="form-check-label" for="b ball">b ball</label>
+</div>
 
-  <footer class="page-footer font-small blue pt-4">
+<br><br>
+<!-- -----------------starts -->
+
+<h1>Checklist</h1>
+<div class="row">
+
+  <div class="col-md-4">
+    <h4>List of Hobbies</h4>
+
+    <ul class="checkbox-items">
+      <li *ngFor="let item of checkboxesDataList">
+        <input type="checkbox" name="" id="" [(ngModel)]="item.isChecked" (change)="changeSelection()">{{item.label}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h4>No of Selected Hobbies: {{selectedItemsList.length}} </h4>
+    <ul>
+      <li *ngFor="let item of selectedItemsList">{{item.label}}</li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h4>Object</h4>
+    <code>
+    {{selectedItemsList | json}}
+    </code>
+
+    <h4>Array of IDs</h4>
+    <code>{{checkedIDs}}</code>
+  </div>
+
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+
+  <footer class="page-footer font-small blue pt-4 fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2022 Copyright:
         <a href="https://mdbootstrap.com/"> Company.com</a>
     </div>
