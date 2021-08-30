@@ -1,7 +1,7 @@
 
 <!-- Nav Bar sTart -->
 <!-- navbar-light bg-light -->
-<nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5">
+<nav class="navbar navbar-expand-lg navbar-dark indigo rounded-5 fixed-top">
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Toggle button -->
@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <i class="material-icons" style="font-size:36px;left:10px">public</i>
+        <img src="{{pic_csk}}" class="rounded-8" style="width:40px;height:40px"/>
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -129,12 +129,16 @@
 </nav>
 <!-- Navbar -->
   
+<!-- 
+<nav>
+  <h1>Good
+  Employee Details Form</h1>
+  </nav>
+   -->
 
-  
 
 
-
-<br>
+<br><br><br>
 <h1 class="border border-primary alert-primary rounded-5 text-center">Employee Details Form</h1><br>
 
   <!-- Button trigger modal -->
@@ -147,7 +151,7 @@
 
 <!-- Table part -->
 <div class="container alert border-primary rounded-5">
-    <table mdbTable class="border-primary mt-2" Hover="True">
+    <table datatable mdbTable id="myTable" class="border-primary mt-2" Hover="True"  [dtOptions]="dtOptions">
       <thead class="blue">
        
         <td class="col-3"> First Name</td>
@@ -174,6 +178,7 @@
 <!-- table part end -->
 <br><br>
 <!-- employeee details added part -->
+
 
   <!-- ----------------------Models------------------------- -->
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-employee',
@@ -10,6 +10,10 @@ import { NgForm } from '@angular/forms';
 export class EmployeeComponent implements OnInit {
 
   imageSrc = 'assets/images/img1.jpg';
+  pic_csk = "assets/images/csk3.jpg";
+
+  dtOptions: DataTables.Settings = {};
+  posts:any;
 
   data: Array<any>;
 
@@ -19,7 +23,7 @@ export class EmployeeComponent implements OnInit {
   email="peter@gmail.com";
   mobile="9788331203";
 
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.data = [
       { firstName: 'John', lastName: 'Doe', dob: '12/12/2010' ,email:'john@gmail.com',mobile:'9788331203'},
       { firstName: 'Michael', lastName: 'Smith', dob: '12/12/2010',email:'michael@gmail.com' ,mobile:'9788331203'},
@@ -29,6 +33,16 @@ export class EmployeeComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      processing: true
+    };
+  
+    this.http.get('http://jsonplaceholder.typicode.com/posts')
+      .subscribe(posts => {
+        this.posts = posts;
+    });
   }
 
   getData(form:NgForm){

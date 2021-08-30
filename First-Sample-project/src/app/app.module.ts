@@ -14,6 +14,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms'; 
 import {FormBuilder,FormGroup } from  '@angular/forms';  
 import { HttpClientModule } from '@angular/common/http';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    DataTablesModule,
     
     MDBBootstrapModule.forRoot()
   ],

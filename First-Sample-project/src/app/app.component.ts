@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'First-Sample-project';
+
+  pic_csk = "assets/images/csk1.jpeg";
+
 }

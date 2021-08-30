@@ -9,6 +9,7 @@ import { NgForm, NgModel } from '@angular/forms';
 export class FeedbackComponent implements OnInit {
 
   alldata = " this is all data";
+  pic_csk = "assets/images/csk3.jpg";
   
   data:Array<any>;
   count=0;
@@ -23,7 +24,7 @@ export class FeedbackComponent implements OnInit {
   printFeedBack(form:NgForm){
      console.log(form);
      this.data.push(form);
-     console.log(this.data[1]["name"]);
+    // console.log(this.data[1]["name"]);
      console.log(this.count);
      this.count++;
   }

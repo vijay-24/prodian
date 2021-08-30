@@ -14,14 +14,15 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fas fa-bars"></i>
+        <!-- <i class="fas fa-bars"></i> -->
+       
       </button>
-  
+      
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <i class="material-icons" style="font-size:36px;left:10px">public</i>
+           <img src="{{pic_csk}}" class="rounded-8" style="width:40px;height:40px"/>
         </a>
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -137,146 +138,195 @@
 <br>
 <h1 class="border border-primary alert-primary rounded-pill text-center">Sports Form</h1><br>
 
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="materialUnchecked">
-  <label class="form-check-label" for="materialUnchecked">good</label>
+<div class="container">
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD</button>
 </div>
 
-<div class="container px-2 mx-3 border border-primary">
+<div class="container row">
+          <div class="row col-6">
+        <p><strong>Favourite Sports : </strong>{{foot}} {{cri}} {{hoc}} {{bb}} {{chess}} {{kabadi}}</p>
+        
+      </div>
+
+</div>
+<br><br>
+
+
+
+<div class="container px-2 mx-3">
 
 <div class="row">
-    <div class="card w-25 col-3 view overlay zoom" for="materialUnchecked">
-      <img
-        src="{{football}}"
-        class="card-img-top"
-        alt="..." for="materialUnchecked"
-      />
-      
-        <div class="card-body" for="materialUnchecked">
-          <h5 class="card-title" for="ch_football">FootBall</h5>
-          <p class="card-text">
-          
-          </p>
-          <a class="btn btn-primary" for="materialUnchecked">Select</a>
+  <ng-container *ngIf="card_footBall">
+      <div class="card w-25 col-3 view overlay zoom" for="materialUnchecked">
+        <img
+          src="{{pic_football}}"
+          class="card-img-top"
+          alt="..." for="for_football" 
+        />
+        
+          <div class="card-body" for="for_football">
+            <h5 class="card-title" for="ch_football"><label class="form-check-label" for="for_football">Football</label></h5>
+            </div>
         </div>
-      </div>
+  </ng-container>
 
-    <div class="card w-25 col-3">
-      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
-        <img
-          src="{{cricket}}"
-          class="img-fluid"
-        />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Cricket</h5>
-        <p class="card-text">
-          
-        </p>
-        <a href="#!" class="btn btn-primary">Select</a>
-      </div>
-    </div>
+  <ng-container *ngIf="card_cricket">
+        <div class="card w-25 col-3">
+          <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+            <img
+              src="{{pic_cricket}}"
+              class="img-fluid"
+            />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="pic_card-body">
+            <h5 class="card-title"> <label class="form-check-label" for="for_cricket">Cricket </label></h5>
+          </div>
+        </div>
+      </ng-container>
 
-    <div class="card w-25 col-3">
-      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
-        <img
-          src="{{basketball}}"
-          class="img-fluid"
-        />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Bastket Ball</h5>
-        <p class="card-text">
+      <ng-container *ngIf="card_basketBall">
+        <div class="card w-25 col-3">
+          <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+            <img
+              src="{{pic_basketball}}"
+              class="img-fluid"
+            />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><label class="form-check-label" for="for_bball">Basket ball</label></h5>
+           
+          </div>
+        </div>
+      </ng-container>
+        
+
+        <ng-container *ngIf="card_hockey">
+          <div class="card w-25 col-3">
+            <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+              <img
+                src="{{pic_hockey}}"
+                class="img-fluid"
+              />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><label class="form-check-label" for="for_hockey">Hockey </label></h5>
+            
+            </div>
+          </div></ng-container>
+       
+            
+ 
          
-        </p>
-        <a href="#!" class="btn btn-primary">Select</a>
-      </div>
+         <ng-container *ngIf="card_kabadi">
+            <div class="card w-25 col-3">
+              <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+                <img
+                  src="{{pic_kabadi}}"
+                  class="img-fluid"
+                />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><label class="form-check-label" for="for_kabadi">Kabadi </label></h5>
+              
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="card_chess">
+              <div class="card w-25 col-3">
+                <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
+                  <img
+                    src="{{pic_chess}}"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><label class="form-check-label" for="for_chess">Chess </label></h5>
+                
+                </div>
+              </div>
+              
+     </ng-container>
     </div>
 
-    <div class="card w-25 col-3">
-      <div class="bg-image view overlay zoom" data-mdb-ripple-color="light">
-        <img
-          src="{{hockey}}"
-          class="img-fluid"
-        />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Hockey</h5>
-        <p class="card-text">
-          
-        </p>
-        <a href="#!" class="btn btn-primary">Select</a>
-      </div>
-    </div>
-  </div>
-      
-   
-  </div>
+</div>
+
+</div>
 
 <br>
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="football">
-  <label class="form-check-label" for="football">football</label>
+
+
+  <!-- ----------------------Models------------------------- -->
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="false">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control"  
+                      id="for_football" #ng_football="ngModel" ngModel (change)="chb_Football(ng_football)" [ngModel]="true">
+                  <label class="form-check-label" for="for_football">Football</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control" id="for_cricket" #ng_cricket="ngModel" ngModel (change)="chb_cricket(ng_cricket)" [ngModel]="true">
+                  <label class="form-check-label" for="for_cricket">Cricket </label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control" id="for_hockey" #ng_hockey="ngModel" ngModel (change)="chb_hockey(ng_hockey)">
+                  <label class="form-check-label" for="for_hockey">Hockey </label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control" id="for_bball" #ng_bball="ngModel" ngModel (change)="chb_bball(ng_bball)">
+                  <label class="form-check-label" for="for_bball">Basket ball</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control" id="for_kabadi" #ng_kabadi="ngModel" ngModel (change)="chb_kabadi(ng_kabadi)">
+                  <label class="form-check-label" for="for_kabadi">Kabadi</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input form-control" id="for_chess" #ng_chess="ngModel" ngModel (change)="chb_chess(ng_chess)">
+                  <label class="form-check-label" for="for_chess">Chess</label>
+                </div>
+
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="cricket">
-  <label class="form-check-label" for="cricket">cricket</label>
-</div>
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="hockey">
-  <label class="form-check-label" for="hockey">hockey</label>
-</div>
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="b ball">
-  <label class="form-check-label" for="b ball">b ball</label>
-</div>
+
+<!-- ------------------===models end------------------------ -->
+
+
 
 <br><br>
-<!-- -----------------starts -->
-
-<h1>Checklist</h1>
-<div class="row">
-
-  <div class="col-md-4">
-    <h4>List of Hobbies</h4>
-
-    <ul class="checkbox-items">
-      <li *ngFor="let item of checkboxesDataList">
-        <input type="checkbox" name="" id="" [(ngModel)]="item.isChecked" (change)="changeSelection()">{{item.label}}
-      </li>
-    </ul>
-  </div>
-
-  <div class="col-md-4">
-    <h4>No of Selected Hobbies: {{selectedItemsList.length}} </h4>
-    <ul>
-      <li *ngFor="let item of selectedItemsList">{{item.label}}</li>
-    </ul>
-  </div>
-
-  <div class="col-md-4">
-    <h4>Object</h4>
-    <code>
-    {{selectedItemsList | json}}
-    </code>
-
-    <h4>Array of IDs</h4>
-    <code>{{checkedIDs}}</code>
-  </div>
-
-</div>
-
-<br><br><br><br><br><br><br><br>
-
+<br><br><br>
 
   <footer class="page-footer font-small blue pt-4 fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2022 Copyright:

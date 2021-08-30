@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <i class="material-icons" style="font-size:36px;left:10px">public</i>
+        <img src="{{pic_csk}}" class="rounded-8" style="width:40px;height:40px"/>
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -209,6 +209,49 @@ The star-forming nebula W51 is one of the largest "star factories" in the Milky 
 </section>
 
 
+<div class="row">
+
+  <div class="col-md-4">
+    <h4>List of Hobbies</h4>
+
+    <ul class="checkbox-items">
+      <li *ngFor="let item of checkboxesDataList">
+        <input type="checkbox" name="" id="" [(ngModel)]="item.isChecked" (change)="changeSelection()">{{item.label}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h4>No of Selected Hobbies: {{selectedItemsList.length}} </h4>
+    <ul>
+      <li *ngFor="let item of selectedItemsList">{{item.label}}</li>
+    </ul>
+  </div>
+
+</div>
+<br>
+ <!-- *ngIf="card_chess" -->{{checkboxesDataList[0]['label']}}
+ <!-- *ngIf="Photography" -->
+<div class="row">
+  <ng-container >
+    <div class="border border-primary">this is one</div>
+  </ng-container>
+  <ng-container>
+    <div class="border border-primary">this is Two</div>
+  </ng-container>
+
+</div>
+<br>
+<div class="col-md-4">
+  <h4>No of Selected Hobbies: {{selectedItemsList.length}} </h4>
+  <ul *ngFor="let item of checkboxesDataList">
+    <ng-container>
+    <!-- <li >{{item.label}}--{{item.isChecked}}</li> -->
+  </ng-container>
+  </ul>
+</div>
+
+<br><br><br><br>
 <footer class="page-footer font-small blue pt-4 fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2022 Copyright:
         <a href="https://mdbootstrap.com/"> Company.com</a>
