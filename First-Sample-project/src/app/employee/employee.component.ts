@@ -39,10 +39,10 @@ export class EmployeeComponent implements OnInit {
       processing: true
     };
   
-    this.http.get('http://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => {
-        this.posts = posts;
-    });
+    // this.http.get('http://jsonplaceholder.typicode.com/posts')
+    //   .subscribe(posts => {
+    //     this.posts = posts;
+    // });
   }
 
   getData(form:NgForm){

@@ -139,7 +139,7 @@
 
 
 <br><br><br>
-<h1 class="border border-primary alert-primary rounded-5 text-center">Employee Details Form</h1><br>
+<h1 class="border border-primary blue rounded-5 text-center">Employee Details Form</h1><br>
 
   <!-- Button trigger modal -->
   <div class="container">
@@ -149,9 +149,9 @@
   </div>
 
 
-<!-- Table part -->
-<div class="container alert border-primary rounded-5">
-    <table datatable mdbTable id="myTable" class="border-primary mt-2" Hover="True"  [dtOptions]="dtOptions">
+<!-- Table part Normal  -->
+<!-- <div class="container alert border-primary rounded-5">
+    <table datatable mdbTable id="myTable" class="border-primary mt-2 hover" [dtOptions]="dtOptions">
       <thead class="blue">
        
         <td class="col-3"> First Name</td>
@@ -164,7 +164,7 @@
       <tbody id="tbody">
         
         <tr mdbTableCol *ngFor="let emp of data">
-            <td > {{emp.firstName}}</td>
+            <td >{{emp.firstName}}</td>
             <td> {{emp.lastName}}</td>
             <td> {{emp.dob}}</td>
             <td> {{emp.email}}</td>
@@ -173,10 +173,10 @@
         
       </tbody>
     </table>
-  </div>
+  </div> -->
 
 <!-- table part end -->
-<br><br>
+
 <!-- employeee details added part -->
 
 
@@ -291,6 +291,29 @@
 
 
 <br>
+<div class="container alert border-primary rounded-5">
+<table mdbTable datatable [dtOptions]="dtOptions" class="row-border hover ">
+  <thead class="blue">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Date Of Birth</th>
+      <th>Email</th>
+      <th>Mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of data">
+      <td>{{ post.firstName }}</td>
+      <td>{{ post.lastName }}</td>
+      <td>{{ post.dob }}</td>
+      <td>{{ post.email }}</td>
+      <td>{{ post.mobile }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br><br><br><br>
 
 <!-- ------------------===models end------------------------ -->
 
