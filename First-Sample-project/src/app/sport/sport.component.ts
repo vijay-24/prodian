@@ -1,6 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { FormBuilder, FormGroup, FormControl, Validators, FormArray} from '@angular/forms';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-sport',
@@ -28,45 +29,16 @@ export class SportComponent implements OnInit {
 
 checking_var = ["card_FootBall","card_Cricket","card_Hockey","card_BasketBall","card_Chess","card_Kabadi"];
  
- constructor() { 
+ constructor(private empService : MyserviceService) { 
   
  }
 
 
   ngOnInit(): void {
+    this.checkboxesDataList = this.empService.getEmployee();
    
   }
-  checkboxesDataList = [
-    {
-      id: 'C001',
-      label: 'FootBall',
-      isChecked: true
-    },
-    {
-      id: 'C002',
-      label: 'Cricket',
-      isChecked: true
-    },
-    {
-      id: 'C003',
-      label: 'Hockey',
-      isChecked: false
-    },
-    {
-      id: 'C004',
-      label: 'BasketBall',
-      isChecked: false
-    },
-    {
-      id: 'C004',
-      label: 'Kabadi',
-      isChecked: false
-    },
-    {
-      id: 'C005',
-      label: 'Chess',
-      isChecked: false
-    }
+  checkboxesDataList:any = [
     
   ]
  

@@ -16,6 +16,8 @@ import {FormBuilder,FormGroup } from  '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 
+import { MyserviceService } from './myservice.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ import { DataTablesModule } from 'angular-datatables';
     
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [MyserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

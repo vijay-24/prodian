@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-employee',
@@ -23,13 +24,15 @@ export class EmployeeComponent implements OnInit {
   email="peter@gmail.com";
   mobile="9788331203";
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private myService : MyserviceService) { 
     this.data = [
       { firstName: 'John', lastName: 'Doe', dob: '12/12/2010' ,email:'john@gmail.com',mobile:'9788331203'},
       { firstName: 'Michael', lastName: 'Smith', dob: '12/12/2010',email:'michael@gmail.com' ,mobile:'9788331203'},
       { firstName: 'Michael', lastName: 'Jordan', dob: '12/12/2010',email:'michael@gmail.com',mobile:'9788331203' },
       { firstName: 'Tanya', lastName: 'Blake', dob: '12/12/2010',email: 'tanya@gmail.com',mobile:'9788331203'}
   ];
+
+  console.log(this.myService.getData());
   }
   
   ngOnInit(): void {
