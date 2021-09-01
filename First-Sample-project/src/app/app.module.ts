@@ -12,7 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 
 import { ReactiveFormsModule,FormsModule } from '@angular/forms'; 
-import {FormBuilder,FormGroup } from  '@angular/forms';  
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
+import {FormBuilder } from  '@angular/forms';  
 import { HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 

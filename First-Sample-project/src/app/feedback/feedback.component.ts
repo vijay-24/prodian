@@ -1,5 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { NgForm, NgModel ,FormGroup , FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
@@ -21,9 +21,21 @@ export class FeedbackComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  loginForm = new FormGroup({
+    name: new FormControl(' '),
+    email: new FormControl(' '),
+    
+})
+
   printFeedBack(form:NgForm){
      console.log(form);
      this.data.push(form);
+
+    //  this is FormGroup data get format
+     console.log("Login Form Name : "+this.loginForm.value['name']);
+     console.log("Login Form Email : "+this.loginForm.value['email']);
+    //  this is ends -----
+
     // console.log(this.data[1]["name"]);
      console.log(this.count);
      this.count++;
