@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 
 import { MyserviceService } from './myservice.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MyserviceService } from './myservice.service';
     EmployeeComponent,
     SportComponent,
     AboutComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
