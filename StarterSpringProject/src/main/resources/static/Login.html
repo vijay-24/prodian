@@ -1,0 +1,60 @@
+<!DOCTYPE html>    
+<html xmlns:th="https://www.thymeleaf.org">
+<html>    
+<head>    
+    <title>Front Page</title>   
+    <!-- Direct from the INTERNET -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>  -->
+
+    <!-- From the File -->
+    <link rel="stylesheet" href="D:\prodian_workspace\Traning\plugins\bootstrap-4.3.1-dist\css\bootstrap.min.css">
+  <style>
+
+.co{
+  color: Green;
+}
+h1{
+  color: Blue;
+}
+  .red_co{
+    color: Red;
+  }
+</style>
+</head> 
+<body >
+<center>
+<h1 class="co alert alert-primary border border-info" > Login Page</h1>
+<!-- alert alert-primary  -->
+<div class="container alert alert-primary border border-success rounded w-50 p-3">
+<br>
+<p id="error" class="red_co"></p>
+    <form action="" th:action="@{/Loged}" th:object="${greeting}" method="post">    
+         <table><tr><td>
+        <label style="color:black;"><b>User Name     
+        </b>    
+        </label>    </td><td>
+        <input type="text" name="uname" id="uname" th:field="*{userId}" placeholder="Username"/>    
+        <br><br>    </td></tr><tr> <td>
+        <label style="color:black;"><b>Password     
+        </b>    
+        </label>    </td><td>
+        <input type="Password" name="pass" id="Pass" th:field="*{pass}" placeholder="Password"/>    
+        <br><br>    </td></tr></table>
+        <br><br>
+        <b>
+        <center>
+        <button type="submit" class="btn btn-primary"> Sign In </button> 
+
+      </center></b>
+        <br><br>    
+    
+    </form>     
+    
+</div>
+
+<br>
+</body>
+</html>

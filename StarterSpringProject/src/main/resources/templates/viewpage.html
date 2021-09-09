@@ -1,0 +1,49 @@
+<!DOCTYPE html>    
+<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
+<html>    
+<head>    
+    <title>Login Form</title>    
+	 <script language="javascript" type="text/javascript" src="temp_JS.js"></script>
+</head>    
+<body bgcolor="lightGray">    
+   <center><h1 style="border:blue; border-width:1px; border-style:outset; background-color:gray;color:Red;">Google Mail</h1></center><br> <br> <br> <br> 
+  
+ 
+<center>
+    <form method="post" action="MM_Login_Check.jsp">    
+         <table><tr><td>
+		<label style="color:black;"><b>User Name     
+        </b>    
+        </label>    </td><td>
+        <input type="text" name="uname" id="uname" placeholder="Username">    
+        <br><br>    </td></tr><tr> <td>
+        <label style="color:black;"><b>Password     
+        </b>    
+        </label>    </td><td>
+        <input type="Password" name="pass" id="Pass" placeholder="Password">    
+        <br><br>    </td></tr></table>
+		<br><br>
+        <b><center><input type="submit" name="submit" id="log" value="Sign In" onclick="Name_JS()" /> 
+		
+		<a href="MM_SignUP.html">	<input  type="button" name="Sign Up" id="log" value="Sign Up" />  </a>  </center></b>
+        <br><br>    
+     
+    </form>     
+	<script>
+	function Name_JS()
+		{
+	//		alert('req');
+	//	var req= require('mysql');
+	//		alert(req);
+		var b = document.getElementById('uname').value;
+	//	alert(b);
+		localStorage.setItem("firstname", b);
+		//document.getElementById('here').textContent = b;	
+
+		}
+	</script>
+	
+ </center> 
+</body>    
+</html>  
