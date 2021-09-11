@@ -9,6 +9,7 @@ import { Emp_Temp } from './employee/emp_temp';
 // import { Observable } from 'rxjs/internal/Observable';
 import { Observable } from "rxjs";
 import { Employee } from './employee/employee';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,40 +20,42 @@ export class MyserviceService {
 
   // ---this is spring boot data geting url    get method
  
+  // ------ this is the url
+  appURL = environment.baseURL+"/api/posts";
  
   constructor(private http: HttpClient) { 
     this.findAll();
   }
- usersUrl = 'http://localhost:8080/api/posts/show';
+//  usersUrl = 'http://localhost:8080/api/posts/show';
   /// this is the fetching method from the the db
   public findAll(): Observable<any> {
-    return this.http.get(this.usersUrl);
+    return this.http.get(this.appURL+'/show');
   }
 
   
   //----- Addd employeee details 
-addURL ='http://localhost:8080/api/posts/add';
+// addURL ='http://localhost:8080/api/posts/add';
   createEmployee(employee: Employee): Observable<Object>{
-    return this.http.post(`${this.addURL}`, employee);
+    return this.http.post(`${this.appURL}/add`, employee);
   }
 
   // ----- Delete employee details
-  delUrl = 'http://localhost:8080/api/posts/del';
+  // delUrl = 'http://localhost:8080/api/posts/del';
   deleteEmployee(id: number): Observable<Object>{
-    return this.http.delete(`${this.delUrl}/${id}`);
+    return this.http.delete(`${this.appURL}/del/${id}`);
   }
 
 
   // ----  Get by id 
-  getByIdURL = 'http://localhost:8080/api/posts/get';
+  // getByIdURL = 'http://localhost:8080/api/posts/get';
   getById(id: number): Observable<any> {
-    return this.http.get(`${this.getByIdURL}/${id}`);
+    return this.http.get(`${this.appURL}/get/${id}`);
   }
 
   // ------ Updadate the details
-  updateURL = 'http://localhost:8080/api/posts/add';
+  // updateURL = 'http://localhost:8080/api/posts/add';
   updateEmployee(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.updateURL}/${id}`, value);
+    return this.http.put(`${this.appURL}/add/${id}`, value);
   }
 
 
