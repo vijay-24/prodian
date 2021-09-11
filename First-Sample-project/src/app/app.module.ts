@@ -20,6 +20,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { MyserviceService } from './myservice.service';
 import { HeaderComponent } from './header/header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { HeaderComponent } from './header/header.component';
     SportComponent,
     AboutComponent,
     FeedbackComponent,
-    HeaderComponent
+    HeaderComponent,
+  
   ],
   imports: [
     BrowserModule,

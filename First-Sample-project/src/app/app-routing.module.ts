@@ -6,12 +6,14 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { LoginComponent } from './login/login.component';
 import { SportComponent } from './sport/sport.component';
 
+
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'employee',component:EmployeeComponent},
   {path:'sport',component:SportComponent},
   {path:'feedback',component:FeedbackComponent},
-  {path:'about',component:AboutComponent}
+  {path:'about',component:AboutComponent},
+ 
 ];
 
 @NgModule({
