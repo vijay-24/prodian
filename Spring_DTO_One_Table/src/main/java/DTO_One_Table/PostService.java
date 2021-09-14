@@ -12,4 +12,11 @@ public interface PostService {
 	PostResponse myUpdate(Long id,PostDto postDto);
 	PostResponse myDelete(long id);
 	
+	//--- user query	
+	List<PostDto> showAll_userQuery_1();
+	
+	PostDto UpadateUserQuery(String name, Long id);
+	
+	List<String> nameAll();
+	
 }
