@@ -58,6 +58,20 @@ export class MyserviceService {
     return this.http.put(`${this.appURL}/add/${id}`, value);
   }
 
+  oneToOneCreateURl ="http://localhost:8080/organization/create";
+  // =-----------one to one mapping
+  // http://localhost:8080/organization/create
+  oneToOneCreate(testjson: any): Observable<Object>{
+    return this.http.post(`${this.oneToOneCreateURl}`, testjson);
+  }
+
+  oneToOneShowURl ="http://localhost:8080/organization/get";
+// =-----------one to one mapping
+  // http://localhost:8080/organization/get
+oneToOneShow(): Observable<any>{
+  return this.http.get(this.oneToOneShowURl);
+}
+
 
   getEmployee(){
     return  [

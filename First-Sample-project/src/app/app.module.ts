@@ -20,6 +20,9 @@ import { DataTablesModule } from 'angular-datatables';
 import { MyserviceService } from './myservice.service';
 import { HeaderComponent } from './header/header.component';
 
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpClientModule,
     DataTablesModule,
-    
+    MatTabsModule,
+    MatIconModule,
+    MatGridListModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [MyserviceService],

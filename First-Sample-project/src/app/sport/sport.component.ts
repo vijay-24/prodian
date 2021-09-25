@@ -19,6 +19,7 @@ export class SportComponent implements OnInit {
 
   pic_csk = "assets/images/csk3.jpg";
   
+  vid_det = "assets/video/Dettol.mp4";
 
   public card_FootBall:boolean = true;
   public card_Cricket:boolean =true;

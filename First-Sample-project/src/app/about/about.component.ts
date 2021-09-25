@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MyserviceService } from '../myservice.service';
+
 
 @Component({
   selector: 'app-about',
@@ -8,11 +11,90 @@ import { NgModule } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  pic_football = 'assets/images/football.jpg';
+  pic_cricket = 'assets/images/cricket.jpg';
+  pic_basketball = 'assets/images/basketball.jpg';
+  pic_hockey = 'assets/images/hockey.jpg';
+  pic_kabadi ="assets/images/kabadi.jpg";
+  pic_chess = "assets/images/chess.jpeg";
+
+  changeText1 : any;
+  changeText2 :any;
+
   public con_Photography:boolean = false;
   pic_csk = "assets/images/csk3.jpg";
 
+  vid_det = "assets/video/Dettol1.mp4";
 
-  constructor() { }
+  data: Array<any>;
+
+  constructor(private myService : MyserviceService) { 
+
+    this.data = [
+      { name : 'John', orgId: '12',address : {city:'new city',state:'new state'} },
+      ];
+
+  }
+
+  name = new FormControl('');
+
+  myformgrp =new FormGroup({
+    name: new FormControl('Krunal', Validators.maxLength(10)),
+    orgId: new FormControl(26, Validators.required),
+    city: new FormControl('chennai'),
+    state: new FormControl('')
+  });
+
+  testing(){
+    alert(this.name.value);
+    console.log(this.name.value);
+  }
+ 
+ testjson= {
+    "name": this.myformgrp.get('name')?.value,
+    "orgId": this.myformgrp.get('orgId')?.value,
+    "address": {
+        "city": this.myformgrp.get('city')?.value,
+        "state": this.myformgrp.get('state')?.value
+    }
+}
+  testing1(){
+   this.testjson= {
+      "name": this.myformgrp.get('name')?.value,
+      "orgId": this.myformgrp.get('orgId')?.value,
+      "address": {
+          "city": this.myformgrp.get('city')?.value,
+          "state": this.myformgrp.get('state')?.value
+      }
+  }
+
+    console.log(this.myformgrp.get('name')?.value);
+    console.log(this.myformgrp.get('orgId')?.value);
+    console.log(this.myformgrp.get('city')?.value);
+    console.log(this.myformgrp.get('state')?.value);
+    console.log("-----------------------");
+    console.log(this.testjson.orgId);
+
+    this.myService.oneToOneCreate(this.testjson).subscribe( data =>{
+      console.log(data);
+    },
+    error => console.log(error));
+  }
+
+  goToEmployeeList(){
+    console.log(this.data[0]);
+    this.myService.oneToOneShow().subscribe(data => {
+      this.testjson = data;
+      this.data=data;
+      console.log(this.testjson);
+      console.log(this.testjson);
+     
+      console.log("data  "+this.data[0]+this.data[2]);
+      // console.log(data);
+      
+    });
+
+  }
 
   ngOnInit(): void {
     this.fetchSelectedItems()
@@ -113,15 +195,32 @@ export class AboutComponent implements OnInit {
     }
   }
 
-  // fetchCheckedIDs() {
-  //   this.checkedIDs = []
-  //   this.checkboxesDataList.forEach((value, index) => {
-  //     if (value.isChecked) {
-  //       this.checkedIDs.push(value.id);
-  //       console.log(value.id);
-  //     }
-  //   });
-  // }
+  public chartType: string = 'bar';
 
+  public chartDatasets: Array<any> = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
+  ];
+
+  public chartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+  public chartColors: Array<any> = [
+    {
+      backgroundColor: 'rgba(105, 0, 132, .2)',
+      borderColor: 'rgba(200, 99, 132, .7)',
+      borderWidth: 2,
+    },
+    {
+      backgroundColor: 'rgba(0, 137, 132, .2)',
+      borderColor: 'rgba(0, 10, 130, .7)',
+      borderWidth: 2,
+    }
+  ];
+
+  public chartOptions: any = {
+    responsive: true
+  };
+  public chartClicked(e: any): void { }
+  public chartHovered(e: any): void { }
 
 }

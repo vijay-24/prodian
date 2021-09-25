@@ -77,10 +77,181 @@ The star-forming nebula W51 is one of the largest "star factories" in the Milky 
 
 </section>
 
+<br><br>
+
+<!-- First one -->
+<mdb-carousel [animation]="'slide'" class="carousel slide carousel-fade">
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third slide">
+    </mdb-carousel-item>
+  </mdb-carousel>
+
+  <!-- Second one -->
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Light mask</h3>
+        <p>First text</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Slight mask</h3>
+        <p>Third text</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+
+  <br>
+  <!-- Third one -->
+  <mdb-carousel class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'">
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).jpg" alt="First slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).jpg" alt="Second slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg" alt="Third slide">
+    </mdb-carousel-item>
+  </mdb-carousel>
+
+<br>
+<!-- Fouth one Video carousel -->
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+      <video class="video-fluid w-100" autoplay loop muted>
+        <source src="{{vid_det}}" type="video/mp4" />
+      </video>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <video class="video-fluid w-100" autoplay loop muted>
+        <source src="{{vid_det}}" type="video/mp4" />
+      </video>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <video class="video-fluid w-100" autoplay loop muted>
+        <source src="{{vid_det}}" type="video/mp4" />
+      </video>
+    </mdb-carousel-item>
+  </mdb-carousel>
+
+  <br>
+
+  <div style="display: block;background-color: white;" class="container">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+<br>
+<div class="container" style="background-color: white;">
+  <mat-grid-list cols="2" rowHeight="2:1" class="px-2 mx-3">
+    <mat-grid-tile class="border border-primary pxy-2 mx-3" 
+    (mouseover)="changeText1=true" (mouseout)="changeText1=false">
+      <span *ngIf="!changeText1">1</span>
+        <span *ngIf="changeText1">
+      <div class="w-100 view overlay zoom" for="materialUnchecked">
+        <img
+          src="{{pic_football}}"
+          class="card-img-top"
+          alt="..." for="for_football"/>         
+        </div></span>
+    </mat-grid-tile>
+    <mat-grid-tile class="border border-primary pxy-2 mx-3" 
+       (click)="changeText2=true" (mouseout)="changeText2=false">
+      <span *ngIf="!changeText2">
+        <div class="w-100">2</div>
+        </span>
+        <span *ngIf="changeText2">
+      <div class="w-100 view overlay zoom" for="materialUnchecked">
+        <img
+          src="{{pic_football}}"
+          class="card-img-top"
+          alt="..." for="for_football"/>         
+        </div></span>
+    </mat-grid-tile>
+    <mat-grid-tile class="border border-primary px-2 mx-3">3</mat-grid-tile>
+    <mat-grid-tile class="border border-primary px-2 mx-3">4</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br><br>
 
 
+<iframe src = "https://stackoverflow.com" width = "755" height = "400"> 
+  Sorry your browser does not support inline frames. 
+</iframe> 
+<object data="https://stackoverflow.com" width="600" height="400">
+  <embed src="https://stackoverflow.com" />
+</object>
+<br>
 
-<br><br><br><br>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+<button class="btn btn-primary" (click)="testing()">Testing</button>
+
+<form [formGroup]="myformgrp">
+<label for="name">Name: </label>
+<input id="name" type="text" formControlName="name">
+<label for="name">Org Id: </label>
+<input id="name" type="text" formControlName="orgId">
+<label for="name">City: </label>
+<input id="name" type="text" formControlName="city">
+<label for="name">State: </label>
+<input id="name" type="text" formControlName="state">
+<button class="btn btn-primary" (click)="testing1()">Testing</button>
+</form>
+<br>
+<button class="btn btn-primary" (click)="goToEmployeeList()">Show All</button>
+<table>
+  <thead class="blue">
+    <tr>
+      <th>Name</th>
+      <th>Org ID</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of data">
+      <td>{{ post.name }}</td>
+      <td>{{ post.orgId }}</td>
+      <td>{{ post.address.city }}</td>
+      <td>{{ post.address.state }}</td>
+    </tr>
+  </tbody>
+</table>
+<br><br><br><br><br><br><br>
 <footer class="page-footer font-small blue pt-4 fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2022 Copyright:
         <a href="https://mdbootstrap.com/"> Company.com</a>

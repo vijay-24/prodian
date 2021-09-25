@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { MyserviceService } from '../myservice.service';
 
@@ -23,7 +23,7 @@ export class EmployeeComponent implements OnInit {
   posts:any;
 
   // addForm: FormGroup;
-  // formBuilder: any;
+
   
   
   data: Array<any>;
@@ -37,8 +37,16 @@ export class EmployeeComponent implements OnInit {
   
  
   employee : Employee = new Employee();
+  // formBuilder: any;
 // car : Employee = new Employee();
   
+// addForm = new FormGroup({
+//   firstName: new FormControl(' '),
+//   lastName: new FormControl(' '),
+//   dob: new FormControl(' '),
+//   email: new FormControl(' '),
+//   mobile:new FormControl(' '),
+// });
   
   constructor(private http: HttpClient,private myService : MyserviceService) { 
     this.goToEmployeeList();
@@ -49,13 +57,6 @@ export class EmployeeComponent implements OnInit {
       { id :4 , firstName: 'Tanya', lastName: 'Blake', dob: '12/12/2010',email: 'tanya@gmail.com',mobile:'9788331203'}
   ];
 
-  // this.addForm = this.formBuilder.group({
-  //   firstName: ['', Validators.required],
-  //   lastName: ['', Validators.required],
-  //   dob: ['', Validators.required],
-  //   email: ['', Validators.required],
-  //   mobile: ['', Validators.required]
-  // });
 
   
   this.goToEmployeeList();
@@ -71,16 +72,22 @@ export class EmployeeComponent implements OnInit {
       processing: true
     };   
   }
-  
-  
+  demoForm = new FormGroup({
+    na: new FormControl('')
+  });
+  demoButton(){
+    console.log("demo"+ this.demoForm.value);
+  }
 
-  saveEmployee(){
+  saveEmployee(){ 
+    // console.log(this.addForm.get(this.dob)+"   "+this.addForm.get(this.mobile));
     // this.employee.phone = (<HTMLInputElement>document.getElementById('mobile')).value.toString();
     this.myService.createEmployee(this.employee).subscribe( data =>{
       console.log(data);
       this.goToEmployeeList();
     },
     error => console.log(error));
+   
   }
 
   goToEmployeeList(){
@@ -156,3 +163,7 @@ getID(id: number){
 
  
 }
+function demoButton() {
+  throw new Error('Function not implemented.');
+}
+
