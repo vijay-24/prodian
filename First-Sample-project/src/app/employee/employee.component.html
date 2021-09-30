@@ -167,7 +167,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let post of data">
+    <tr *ngFor="let post of data" (click)="onSelect(post)">
       <td>{{ post.firstName }}</td>
       <td>{{ post.lastName }}</td>
       <td>{{ post.dob }}</td>

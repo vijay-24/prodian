@@ -160,7 +160,10 @@ getID(id: number){
    
   }
  
-
+  onSelect(post: any) {
+    console.log("Selected item Id: ", post);
+    console.log(post.firstName +"  "+ post.email + " " +post.dob);
+}
  
 }
 function demoButton() {

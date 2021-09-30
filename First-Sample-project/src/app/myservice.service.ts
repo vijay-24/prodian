@@ -72,6 +72,13 @@ oneToOneShow(): Observable<any>{
   return this.http.get(this.oneToOneShowURl);
 }
 
+//  username and password checking  Login in sts project
+// http://localhost:8080/check
+UserPassCheckURL ="http://localhost:8080/check";
+UserPassCheck(dataJSON: any): Observable<any>{
+  return this.http.post(this.UserPassCheckURL, dataJSON,{responseType:"text"});
+}
+
 
   getEmployee(){
     return  [
