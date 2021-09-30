@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     AboutComponent,
     FeedbackComponent,
     HeaderComponent,
+    SignupComponent,
   
   ],
   imports: [

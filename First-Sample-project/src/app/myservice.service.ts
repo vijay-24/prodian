@@ -79,6 +79,13 @@ UserPassCheck(dataJSON: any): Observable<any>{
   return this.http.post(this.UserPassCheckURL, dataJSON,{responseType:"text"});
 }
 
+// username and password checking  Login in sts project
+// http://localhost:8080/add
+userRegisterURL = "http://localhost:8080/add";
+userRegister(dataJSON: any): Observable<any>{
+  return this.http.post(this.userRegisterURL, dataJSON,{responseType:"text"});
+}
+
 
   getEmployee(){
     return  [

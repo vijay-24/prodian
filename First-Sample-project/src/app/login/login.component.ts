@@ -77,6 +77,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  signup(){
+    this.router.navigate(['/signup']);
+  }
+
   onSubmit(form:NgForm){
     alert("working");
   }

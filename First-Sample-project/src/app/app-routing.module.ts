@@ -5,6 +5,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LoginComponent } from './login/login.component';
 import { SportComponent } from './sport/sport.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path:'sport',component:SportComponent},
   {path:'feedback',component:FeedbackComponent},
   {path:'about',component:AboutComponent},
- 
+ {path:'signup',component:SignupComponent}
 ];
 
 @NgModule({
