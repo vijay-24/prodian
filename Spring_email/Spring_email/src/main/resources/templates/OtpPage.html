@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> This is the OTP enter Page !!</h1>
+
+<label>Enter OTP here: </label>
+<input type="text" id="otp"><br>
+
+
+<input type="button" onclick="myfun()" value="Submit"></buton>
+<script>
+	function myfun(){
+	//	alert("good");
+		otp = document.getElementById("otp").value;
+	//	alert("OTP "+otp);
+		url = window.location.href;
+	//	alert("URL : "+url);
+		window.location = 'http://localhost:8080/otpCheck/' + otp;
+
+	}
+</script>
+</body>
+</html>
