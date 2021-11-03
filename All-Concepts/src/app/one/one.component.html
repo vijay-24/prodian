@@ -1,0 +1,177 @@
+<br>
+<!-- 1 div o -->
+<div class="container-fluid border border-1 border-primary rounded-5 p-2 mx-2 my-2 py-2 px-2 mx-auto"
+            style="width:95%;"> 
+<h1 class="border border-3 border-primary rounded-5 text-center bg-primary">This is One </h1><br>
+
+<div class="container-fluid w-50 text-center justify-content-center">
+<ul class="list-group mt-2" >
+    <li class="list-group-item list-group-item-success" >Buttons</li>
+    <li class="list-group-item list-group-item-info ">Dynamic Tab</li>
+    <li class="list-group-item list-group-item-warning">Dynamic Menu</li>
+    
+  </ul>
+</div>
+
+  <br>
+  <!-- Button   ------------------------- -->
+<button type="button" mdbBtn color="primary" mdbWavesEffect routerLink="/two">Primary (Two page)</button>
+<button type="button" mdbBtn color="secondary" mdbWavesEffect routerLink="/gmail">Secondary (Gmail page)</button>
+<button type="button" mdbBtn color="success" mdbWavesEffect>Success</button>
+<button type="button" mdbBtn color="danger" mdbWavesEffect>Danger</button>
+<button type="button" mdbBtn color="warning" mdbWavesEffect>Warning</button>
+<button type="button" mdbBtn color="info" mdbWavesEffect>Info</button>
+<button type="button" mdbBtn color="light" mdbWavesEffect>Light</button>
+<button type="button" mdbBtn color="dark" mdbWavesEffect>Dark</button>
+<button type="button" mdbBtn color="link">Link</button>
+
+<hr>
+
+
+<!-- ------------- -Tab --------------->
+  <ul class="nav nav-tabs border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+      </li>
+  </ul>
+  <div class="tab-content border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2" id="myTabContent">
+    <div class="tab-pane fade show active" id="Home" role="tabpanel" aria-labelledby="home-tab">Home</div>
+    <div class="tab-pane fade" id="Profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+    <div class="tab-pane fade" id="Contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
+  </div>
+  
+  <!-- ----Tab Close -->
+  <hr>
+  ****************************************************
+  
+<!-- ------------- -Tab Button--------------->
+<ul class="nav nav-tabs border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2" id="myTab" role="tablist">
+    <li class="nav-item">
+      <button type="button" class="nav-link active" data-toggle="tab" role="tab" mdbBtn color="success" href="#home1" aria-controls="home1" aria-selected="true" mdbWavesEffect>Home</button>
+    </li>
+    <li class="nav-item">
+        <button type="button" class="nav-link" data-toggle="tab" role="tab" mdbBtn color="success" href="#profile1" aria-controls="profile1" aria-selected="false" mdbWavesEffect>Profile</button>
+    </li>
+    <li class="nav-item">
+      <button type="button" class="nav-link" data-toggle="tab" role="tab" mdbBtn color="success" href="#contact1" aria-controls="contact1" aria-selected="false" mdbWavesEffect>Contact</button>
+    </li>
+  </ul>
+  <div class="tab-content border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2" id="myTabContent">
+    <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab">Home</div>
+    <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+    <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
+  </div>
+  
+  <!-- ----Tab Button Close -->
+  <hr>
+
+  ****************************************************
+  
+<!-- Button Load from json horizontally -->
+  
+    <div class="border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2">
+      <span *ngFor="let bt of btn" class="ml-2 badge badge-pill badge-primary"> {{bt.name}} </span>
+    </div>
+  
+  
+<hr>
+****************************************************Button dummy , button bellow link working
+  <!-- Button json from and tabs also---- dynamic tabs and button -->
+  
+  <ul class="nav nav-tabs border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2 overflow-x" id="myTab" role="tablist">
+    <li *ngFor="let bt of btn" class="nav-item ml-2 badge badge-pill">
+      <button type="button" class="nav-link" data-toggle="tab" role="tab" mdbBtn color="success" 
+      href="home1" aria-controls="home1" aria-selected="true" mdbWavesEffect>{{bt.name}}      
+    </button>
+    <a href="{{'#' + bt.name}}" class="nav-link border border-1 border-primary rounded-5" data-toggle="tab" role="tab">{{bt.name}}</a>
+    </li>
+    </ul>
+  
+
+    <div  class="tab-content border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2" id="myTabContent">
+      <div class="tab-pane fade show active" id="Home1" role="tabpanel" aria-labelledby="home-tab">Home1</div> 
+      
+      <div *ngFor="let bt of btn" class="tab-pane fade" id="{{bt.name}}" role="tabpanel" aria-labelledby="home-tab">{{bt.name}}</div>
+       
+      </div>
+   
+      ****************************************************Badge badge-pill-- this helps to horizontally
+<hr>
+      <div class="border border-1 border-primary rounded-5 px-2 py-2 mx-2 my-2"
+      style="margin: 4px, 4px;
+      padding: 4px;
+      width: auto;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;">
+
+      <span >
+        <li *ngFor="let bt of btn" class="ml-2 badge badge-pill">
+        <button type="button" class="nav-link" data-toggle="tab" role="tab" mdbBtn color="success" 
+        href="bt.name" aria-controls="bt.name" aria-selected="true" mdbWavesEffect>{{bt.name}}</button>
+
+        <a href="{{'#' + bt.name}}">{{bt.name}}</a>
+        </li>
+      </span>
+
+      </div>
+
+      <!-- <button type="button" (click)="addButton()">
+
+      </button> -->
+<hr>
+********************************************************************
+<br>
+
+<!-- -------Drop down menu -->
+
+<!--Trigger-->
+<div class="btn-group">
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+for="firstDropDown" aria-haspopup="true" aria-expanded="false">Material dropdown</button>
+
+<!--Menu-->
+<div  class="dropdown-menu dropdown-primary" id="firstDropDown">
+   <a *ngFor="let bt of btn" class="dropdown-item" href="{{'#' + bt.name}}">{{bt.name}}</a>
+</div>
+</div>
+<hr>
+
+<div class="btn-group hover_drop_down" hover>
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material dropdown</button>
+
+<!--Menu-->
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      
+    </div>
+</div>
+
+<hr>
+***********************************************
+<br>
+<!-- Badge, icons with notification -->
+<a href="">
+  <i class="fas fa-envelope fa-lg"></i>
+  <span class="badge rounded-pill badge-notification bg-danger">999+</span>
+</a>
+<hr>
+************************************************
+<br>
+
+
+
+
+
+
+</div>
+<!-- 1 div c -->
