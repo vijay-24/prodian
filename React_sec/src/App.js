@@ -14,7 +14,6 @@ import Feedback from './page/feedback';
 import Employee  from './page/employee';
 import Sports from './page/sports';
 import Form3 from './page/form3';
-import Employee2 from './page/employee2';
 
 
 import EmpAddForm from './page/empAddForm';
@@ -38,7 +37,7 @@ function App() {
         <Route path="/empadd" element={<EmpAddForm/>}/>
         <Route path="/sports" element={<Sports/>}/>
         <Route path="/form3" element={<Form3/>}/>
-        <Route path="/employee2" element={<Employee2/>}/>
+        
       </Routes>
     </BrowserRouter>
   );

@@ -62,8 +62,8 @@ class header extends React.Component {
       <a href="/employee" class="btn btn-primary mx-2" role="button" style={{width:'155px'}}>Employee</a>
       <a href="/sports" class="btn btn-primary mx-2" role="button" style={{width:'155px'}}>Sports</a>
       <a href="/form3" class="btn btn-primary mx-2" role="button" style={{width:'155px'}}>Form3</a>
-      <a href="/employee2" class="btn btn-primary mx-2" role="button" style={{width:'155px'}}>Emplyee 2</a>
-    <hr></hr>
+      
+      <hr></hr>
     </>
         );
         
